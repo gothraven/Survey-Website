@@ -1,8 +1,10 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>tite du site</title>
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
 	<meta charset="utf-8">
 </head>
 
@@ -16,5 +18,3 @@
 		<a href="#login">login</a>
 	</div>
 </div>
-	
-
