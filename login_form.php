@@ -17,7 +17,7 @@ echo "<p class=\"error\">".($error??"")."</p>";
                                    required value="<?= $data['login']??"" ?>"></td>
                             </tr>
                             <tr>
-                            <td><label for="inputMDP" class="control-label">Password</label></td>
+                            <td><label for="inputMDP" class="control-label">MDP</label></td>
                             <td><input type="password" name="password" size="20" class="form-control" required id="inputMDP"
                                    placeholder="Mot de passe"></td>
                             </tr>

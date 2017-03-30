@@ -9,10 +9,10 @@ $authTableData = [
 ];
 
 $pathFor = [
-    "login"  => "/wesite_projects/trame_auth/login.php",
-    "logout" => "/wesite_projects/trame_auth/logout.php",
-    "adduser" => "/wesite_projects/trame_auth/adduser.php",
-    "root"   => "/wesite_projects/trame_auth/",
+    "login"  => "/website/login.php",
+    "logout" => "/website/logout.php",
+    "adduser" => "/website/adduser.php",
+    "root"   => "/website/",
 ];
 
 const SKEY = '_Redirect';

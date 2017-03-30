@@ -10,7 +10,9 @@ include("header.php");
 
 <?php
 
-echo "<p> Hello " . $idm->getIdentity().". Your uid is: ". $idm->getUid() .". Your role is: ".$idm->getRole()."</p>";
+echo "Hello " . $idm->getIdentity().". Your uid is: ". $idm->getUid() .". Your role is: ".$idm->getRole();
+
+//echo "Escaped values: ".$e_($ci->idm->getIdentity());
 
 
 include("footer.php");
