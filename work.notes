@@ -27,4 +27,15 @@
 	sid -> saisieID---------------------------------------------------------------------------------------------
 	reference -> hadha un nombre de reference nmadoul l'utilisateur bech en cas rah n'contactiweh mena we hak
 
+---------------------------------------------------------------------
+	# Le site doit permettre d’effectuer les opérations suivantes : #
+---------------------------------------------------------------------
 
+--	*Pour les administrateurs*
+	Gestion des questionnaires : liste, ajout, modification, suppression.
+	Gestion des champs pour chaque questionnaire : liste, ajout, modification, suppression.
+	Liste des données saisies par questionnaire.
+
+-- *Pour les utilisateurs* 
+	remplissage du questionnaire
+	(qui doit être généré automatiquement à partir des informations indiquées dans la table champs).
