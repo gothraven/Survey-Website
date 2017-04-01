@@ -1,0 +1,28 @@
+--	*Table users*
+	uid -> userid---------------------------------------------
+	nom -> bayna											 |
+	prenom -> bayna                                          |
+	login -> bayna                                           |
+	mdp -> bayna                                             |
+	role -> admin wela user                                  |
+                                                             |
+--	*Table questionaires*                                    |
+	qid -> questionairesID-----------------------------------|---------------
+	intitule -> hadha l'3onwan ta3 l'questionaires           |              |
+	uid -> soit l'acces ou modif wela pour repondre----------|              |
+                                                                            |
+--	*Table champs*                                                          |
+	cid -> champID psk chaque questionaires 3andha bzaf des champs----------|------------------------
+ 	qid -> questionairesID---------------------------------------------------                       |
+	nom -> hna rah tkoun la question ( ex : what is your name ?)                                    |
+	type -> hna le type ta3 la question (texte, nombre, liste, case à cocher,)                      |
+	order -> l'order ta3 chaque question f la page                                                  |
+                                                                                                    |
+--	*Table donnees*                                                                                 |
+	sid -> saisieID ,chaque user 3andha un sid bech na3rfou beli houwa li jaweb f les champsID------|-----------
+	cid -> champID , bech na3rfou win champs li kteb fih wech kayen fel "valeur"---------------------          |
+	valeur -> wech l'utilisateur jawe 3la la question                                                          |
+                                                                                                               |
+--	*Table saisie*                                                                                             |
+	sid -> saisieID---------------------------------------------------------------------------------------------
+	reference -> hadha un nombre de reference nmadoul l'utilisateur bech en cas rah n'contactiweh mena we hak
