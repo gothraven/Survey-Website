@@ -49,14 +49,34 @@ include("header.php");
                 </div>
             </div>
         </div>
-        <dl>
-            <dt>QUESTIONAIRE - 1</dt>
-            <dd><pre><p class="text-info">question about health</p><kbd>ctrl + 1</kbd></pre></dd>
-            <dt>QUESTIONAIRE - 2</dt>
-            <dd><pre><p class="text-info">question about football</p><kbd>ctrl + 2</kbd></pre>
-            </dd>
-        </dl>
-    </div>
-    <?php 
+        <div class="well well-lg">
+            <dl>
+                <dt>QUESTIONAIRE - 1</dt>
+                <dd>
+                    <pre><p class="text-info">question about health</p><kbd>ctrl + 1</kbd></pre>
+                </dd>
+                <dt>QUESTIONAIRE - 2</dt>
+                <dd>
+                    <pre><p class="text-info">question about football</p><kbd>ctrl + 2</kbd></pre>
+                </dd>
+                <dd>
+                    <pre><p class="text-info">question about football</p><kbd>ctrl + 2</kbd></pre>
+                </dd>
+            </dl>
+            <div class="alert alert-info fade in">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
+                <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
+            </div>
+            <div class="progress">
+                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+                    40%
+                </div>
+            </div>
+            <ul class="pager">
+                <li class="previous"><a href="#">Previous</a></li>
+                <li class="next"><a href="home.php">Next</a></li>
+            </ul>
+        </div>
+        <?php 
 include("footer.php");
 ?>
