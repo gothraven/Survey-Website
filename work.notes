@@ -9,7 +9,7 @@
 --	*Table questionaires*                                    |
 	qid -> questionairesID-----------------------------------|---------------
 	intitule -> hadha l'3onwan ta3 l'questionaires           |              |
-	uid -> soit l'acces ou modif wela pour repondre----------|              |
+	uid -> l'utilisateur li dar la question------------------|              |
                                                                             |
 --	*Table champs*                                                          |
 	cid -> champID psk chaque questionaires 3andha bzaf des champs----------|------------------------
