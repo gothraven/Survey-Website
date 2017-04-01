@@ -32,8 +32,8 @@
 ---------------------------------------------------------------------
 
 --	*Pour les administrateurs*
-	Gestion des questionnaires : liste, ajout, modification, suppression.
-	Gestion des champs pour chaque questionnaire : liste, ajout, modification, suppression.
+	Gestion des questionnaires : (liste, ajout, modification, suppression)
+	Gestion des champs pour chaque questionnaire : (liste, ajout, modification, suppression)
 	Liste des données saisies par questionnaire.
 
 -- *Pour les utilisateurs* 
