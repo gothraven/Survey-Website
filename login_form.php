@@ -18,7 +18,7 @@ echo "<p class=\"error\">".($error??"")."</p>";
                                 <label for="inputNom" class="control-label">Login</label>
                             </td>
                             <td>
-                                <input type="text" name="login" size="20" class="form-control" id="inputLogin" required placeholder="login" required value="<?= $data['login']??" " ?>">
+                                <input type="text" name="login" size="20" class="form-control" id="inputLogin" required placeholder="nom d'utilisateur" required value="<?= $data['login']??'' ?>">
                             </td>
                         </tr>
                         <tr>
