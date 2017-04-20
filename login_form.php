@@ -12,7 +12,7 @@ echo "<p class=\"error\">".($error??"")."</p>";
                 <h2 style="text-align:center">Authentifiez-vous</h2>
                 <form class='input-group' method="post">
                     <!--legend>Authentifiez-vous</legend-->
-                    <table class="center">
+                    <table>
                         <tr>
                             <td>
                                 <label for="inputNom" class="control-label">Login</label>
