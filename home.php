@@ -11,8 +11,8 @@ include("header.php");
     </div>
 
     <?php
-echo "<h3 class='well' style='text-align:center'> Hello ".$idm->getIdentity().". Your uid is: ".$idm->getUid().". Your role is: ".$idm->getRole()."</h3>";
-?>
+        echo "<h3 class='well' style='text-align:center'> Hello ".$idm->getIdentity().". Your uid is: ".$idm->getUid().". Your role is: ".$idm->getRole()."</h3>";
+    ?>
         <div class="well">
             <?php
                if($idm->getRole() == "user"){

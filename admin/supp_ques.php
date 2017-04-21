@@ -1,21 +1,12 @@
 <?php
-    if(!isset($_GET["qid"])){
-        
-        echo "we can't delete yet";
-        
-    }else if(!isset($_POST["delete"]) && !isset($_POST["cancel"]) ){
-        
-        echo "we try to delete";
-        
-        include("admin/supp_popup.php");
-        
-        
-    }else if(isset($_POST["cancel"])){
-        
-        echo "calceled";
-        
-    }else{
-        
+    
+require("../auth/EtreAuthentifie.php");
+
+$itle = 'Suppression';
+include("../header.php");
+
+    if(isset($_GET["qid"])){
+
         echo "we will delete now";
         /*$db = new PDO($dsn,$username,$password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -27,4 +18,5 @@
         }
     */
     }
+    include("../footer.php");
 ?>
