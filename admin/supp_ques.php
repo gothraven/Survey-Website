@@ -6,17 +6,27 @@ $itle = 'Suppression';
 include("../header.php");
 
     if(isset($_GET["qid"])){
-
+        try{
         echo "we will delete now";
-        /*$db = new PDO($dsn,$username,$password);
+        $qid = $_GET["qid"];
+        $db = new PDO($dsn,$username,$password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         $SQL = "DELETE FROM `questionnaires` WHERE qid = ?";
-        $res = $db->query($SQL); 
-        foreach($res as $row){
+        $set = $db->prepare($SQL);
+        $result = $set->execute([$qid]);
+            if(!$result){
+                echo "<p>Erreur de suppression<p>\n";
+            }else{ 
+                echo "<p>La suppression a été effectuée</p>";
+            }
         
+        $db = null;
+    }catch(PDOException $e){
+            echo "Erreur SQL:".$e->getMessage();
         }
-    */
+    
     }
+    echo "<a href='../home.php'>go back home</a>";
     include("../footer.php");
 ?>
