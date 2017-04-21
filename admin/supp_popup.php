@@ -12,7 +12,6 @@
                 <p>Do you want to proceed?</p>
                 <!--p class="debug-url"></p-->
             </div>
-
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
                 <a class="btn btn-danger btn-ok">Delete</a>

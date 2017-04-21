@@ -1,12 +1,12 @@
 <?php
-    
+
 require("../auth/EtreAuthentifie.php");
 
 $itle = 'Suppression';
 include("../header.php");
 
-    if(isset($_GET["qid"])){
-        try{
+if(isset($_GET["qid"])){
+    try{
         echo "we will delete now";
         $qid = $_GET["qid"];
         $db = new PDO($dsn,$username,$password);
@@ -15,18 +15,18 @@ include("../header.php");
         $SQL = "DELETE FROM `questionnaires` WHERE qid = ?";
         $set = $db->prepare($SQL);
         $result = $set->execute([$qid]);
-            if(!$result){
-                echo "<p>Erreur de suppression<p>\n";
-            }else{ 
-                echo "<p>La suppression a été effectuée</p>";
-            }
+        if(!$result){
+            echo "<p>Erreur de suppression<p>\n";
+        }else{ 
+            echo "<p>La suppression a été effectuée</p>";
+        }
         
         $db = null;
     }catch(PDOException $e){
-            echo "Erreur SQL:".$e->getMessage();
-        }
-    
+        echo "Erreur SQL:".$e->getMessage();
     }
-    echo "<a href='../home.php'>go back home</a>";
-    include("../footer.php");
+    
+}
+echo "<a href='../home.php'>go back home</a>";
+include("../footer.php");
 ?>

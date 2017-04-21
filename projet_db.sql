@@ -102,35 +102,35 @@ INSERT INTO `users` (`uid`, `nom`, `prenom`, `login`, `mdp`, `role`) VALUES
 -- Indexes for table `champs`
 --
 ALTER TABLE `champs`
-  ADD PRIMARY KEY (`cid`),
-  ADD KEY `qid` (`qid`) USING BTREE;
+ADD PRIMARY KEY (`cid`),
+ADD KEY `qid` (`qid`) USING BTREE;
 
 --
 -- Indexes for table `donnees`
 --
 ALTER TABLE `donnees`
-  ADD PRIMARY KEY (`sid`,`cid`),
-  ADD KEY `cid` (`cid`);
+ADD PRIMARY KEY (`sid`,`cid`),
+ADD KEY `cid` (`cid`);
 
 --
 -- Indexes for table `questionnaires`
 --
 ALTER TABLE `questionnaires`
-  ADD PRIMARY KEY (`qid`),
-  ADD KEY `uid` (`uid`);
+ADD PRIMARY KEY (`qid`),
+ADD KEY `uid` (`uid`);
 
 --
 -- Indexes for table `saisie`
 --
 ALTER TABLE `saisie`
-  ADD PRIMARY KEY (`sid`);
+ADD PRIMARY KEY (`sid`);
 
 --
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`uid`),
-  ADD UNIQUE KEY `login` (`login`);
+ADD PRIMARY KEY (`uid`),
+ADD UNIQUE KEY `login` (`login`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -140,22 +140,22 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `champs`
 --
 ALTER TABLE `champs`
-  MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `cid` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `questionnaires`
 --
 ALTER TABLE `questionnaires`
-  MODIFY `qid` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `qid` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `saisie`
 --
 ALTER TABLE `saisie`
-  MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `sid` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- Constraints for dumped tables
 --
@@ -164,20 +164,20 @@ ALTER TABLE `users`
 -- Constraints for table `champs`
 --
 ALTER TABLE `champs`
-  ADD CONSTRAINT `champs_ibfk_1` FOREIGN KEY (`qid`) REFERENCES `questionnaires` (`qid`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `champs_ibfk_1` FOREIGN KEY (`qid`) REFERENCES `questionnaires` (`qid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `donnees`
 --
 ALTER TABLE `donnees`
-  ADD CONSTRAINT `donnees_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `saisie` (`sid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `donnees_ibfk_2` FOREIGN KEY (`cid`) REFERENCES `champs` (`cid`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `donnees_ibfk_1` FOREIGN KEY (`sid`) REFERENCES `saisie` (`sid`) ON DELETE CASCADE ON UPDATE CASCADE,
+ADD CONSTRAINT `donnees_ibfk_2` FOREIGN KEY (`cid`) REFERENCES `champs` (`cid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `questionnaires`
 --
 ALTER TABLE `questionnaires`
-  ADD CONSTRAINT `questionnaires_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `users` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE;
+ADD CONSTRAINT `questionnaires_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `users` (`uid`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
