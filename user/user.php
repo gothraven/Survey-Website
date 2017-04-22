@@ -1,9 +1,5 @@
 <?php
-
-echo"<div>
-<h4 style='text-align:center'> I'm a USER </h4>
-</div>";;
-                   //j'explique les etape de travail
+          //j'explique les etape de travail
 echo"<ul>
 <li>on ouvre la base de donner</li>
 <li>SELECT intitule, qid FROM questionnaires</li>
@@ -23,5 +19,5 @@ echo"<div class='well'>
     foreach($res as $row){
         echo "<a href='user/repond_ques.php?qid=$row[qid]' class='list-group-item'>$row[intitule]</a>";
     }
-    echo "</div>
+echo "</div>
 </div>";

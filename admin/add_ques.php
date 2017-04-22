@@ -2,7 +2,7 @@
 
 require("../auth/EtreAuthentifie.php");
 
-$itle = 'Ajouter';
+$title = 'Ajouter';
 include("../header.php");
 
 if(isset($_GET["name"])){
@@ -14,14 +14,21 @@ if(isset($_GET["name"])){
         $SQL = "INSERT INTO `questionnaires` (`qid`, `intitule`, `uid`) VALUES (NULL, ?, 1)";
         $set = $db->prepare($SQL);
         $result = $set->execute([$name]);
+        
         if(!$result){
             echo "<p>Erreur de ajout<p>\n";
         }else{ 
             echo "<p>On a bien creer votre questionaire</p>";
         }
         
+        $SQL = "SELECT MAX(qid) FROM questionnaires";
+        $result = $db->query($SQL);
+        $qid = $result->fetchColumn(0);
+        
+        $url="/website/admin/modif_ques.php?qid=".$qid;
         $db = null;
-        redirect($pathFor['home']);
+        redirect($url);
+        
     }catch(PDOException $e){
         echo "Erreur SQL:".$e->getMessage();
     }

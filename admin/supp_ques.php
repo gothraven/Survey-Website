@@ -2,7 +2,7 @@
 
 require("../auth/EtreAuthentifie.php");
 
-$itle = 'Suppression';
+$title = 'Suppression';
 include("../header.php");
 
 if(isset($_GET["qid"])){
@@ -11,8 +11,11 @@ if(isset($_GET["qid"])){
         $db = new PDO($dsn,$username,$password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        $SQL = "DELETE FROM `questionnaires` WHERE qid = ?";
-        $set = $db->prepare($SQL);
+        $SQL1 = "DELETE FROM `questionnaires` WHERE qid = ?";
+        $SQL2 = "DELETE FROM `champs` WHERE qid = ?";
+        $set = $db->prepare($SQL1);
+        $result = $set->execute([$qid]);
+        $set = $db->prepare($SQL2);
         $result = $set->execute([$qid]);
         if(!$result){
             echo "<p>Erreur de suppression<p>\n";

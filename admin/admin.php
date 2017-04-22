@@ -1,9 +1,5 @@
 <?php
-
-echo"<div>
-<h4 style='text-align:center'> I'm an ADMIN</h4>
-</div>";;
-                   
+echo"<div class='container'>";                   
 echo"<div class='well'>
 <div class='list-group'>";
     $db = new PDO($dsn,$username,$password);
@@ -18,20 +14,20 @@ echo"<div class='well'>
         <a href='admin/repond_ques.php?qid=$row[qid]' onClick=\"return confirm('Voulez allez voir la questionaire et repondre?');\" class='list-group-item' >$row[intitule]</a>
         <button class='btn btn-danger' data-href='admin/supp_ques.php?qid=$row[qid]' data-toggle='modal' data-target='#confirm-delete'>Delete</button>
         <a href='admin/modif_ques.php?qid=$row[qid]' class='btn btn-info' role='button'>Modify</a>
-        <a href='admin/result_ques.php?qid=$row[qid]' class='btn btn-success' role='button'>Answers</a>
-    </div>";
+        <a href='admin/result_ques.php?qid=$row[qid]' class='btn btn-success' role='button'>Answers</a>";
+        echo "</div>";
     }
 
 echo "</div>";
 
-include("supp_popup.php");
-
+include("suppq_popup.php");
+echo "</div>";
 ?>
 
     <script>
         $('#confirm-delete').on('show.bs.modal', function (e) {
             $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-            $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+            //$('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
         });
     </script>
 
@@ -43,7 +39,6 @@ echo "<div style='text-align:center'>
             New
         </button>
 </div>";
-
         include("admin/addq_popup.php");
 ?>
         <script>
@@ -53,6 +48,6 @@ echo "<div style='text-align:center'>
                 window.open($url);
                 //window.location.replace($url);
                 //window.close();
-                //window.open ('YourNewPage.htm','_self',false)
+                //window.open ($url,'_self',false);
             });
         </script>

@@ -2,7 +2,7 @@
 
 require("../auth/EtreAuthentifie.php");
 
-$itle = 'Repondre';
+$title = 'Repondre';
 include("../header.php");
 
 if(isset($_GET["qid"])){
