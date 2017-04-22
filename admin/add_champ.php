@@ -1,11 +1,12 @@
 <?php
+
 require("../auth/EtreAuthentifie.php");
 
 if(!empty($_POST)){
     
         $name = $_POST["nom_champ"];
         $type = $_POST["type"];
-        $qid = 8;
+        $qid = $_POST["qid"];;
         $db = new PDO($dsn,$username,$password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
