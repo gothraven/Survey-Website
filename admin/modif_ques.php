@@ -33,13 +33,13 @@ include("../header.php");
             
             $type = $row{'type'};
             
-            if(strcmp($type,"Text")==0){
+            if(strcmp($type,"Texte")==0){
                 echo"<form><div class='form-group'>
                 <label for='text'><h3>$row[nom]</h3></label>
                 <textarea class='form-control' rows='3' id='text'></textarea>
                 </div></form>";
                 
-            }else if(strcmp($type,"Number")==0){
+            }else if(strcmp($type,"Nombre")==0){
                 
                 echo"<div class='form-group'>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>
