@@ -87,6 +87,7 @@ include("addc_popup.php");
             $(document).ready(function () {
                 $('#insert_form').on("submit", function (event) {
                     event.preventDefault();
+                    $nom = $('#nom_champ').val();
                     if ($('#nom_champ').val() == "") {
                         alert("Name is required");
                     } else {

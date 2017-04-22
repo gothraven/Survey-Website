@@ -8,7 +8,7 @@
             <div class="modal-body">
                 <form method="post" id="insert_form">
                     <label>Enter Question</label>
-                    <input type="text" name="name" id="nom_champ" class="form-control" />
+                    <input type="text" name="nom_champ" id="nom_champ" class="form-control" />
                     <br />
                     <label>Select Type</label>
                     <select name="type" id="type" class="form-control">

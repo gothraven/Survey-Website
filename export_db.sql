@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `projet_db`
 --
+CREATE DATABASE IF NOT EXISTS `projet_db` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `projet_db`;
 
 -- --------------------------------------------------------
 
