@@ -54,14 +54,9 @@ try {
     $res = $stmt->execute($clearData);
     $id = $db->lastInsertId();
     $auth->authenticate($clearData['login'], $data['mdp']);
-    // echo "Utilisateur $clearData[nom] : " . $id . " ajouté avec succès.";
     redirect($pathFor['root']);
 } catch (\PDOException $e) {
     http_response_code(500);
     echo "Erreur de serveur.";
     exit();
 }
-
-
-
-

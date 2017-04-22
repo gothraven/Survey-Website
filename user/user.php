@@ -21,7 +21,7 @@ echo"<div class='well'>
     $SQL = "SELECT qid,intitule FROM questionnaires";
     $res = $db->query($SQL); 
     foreach($res as $row){
-        echo "<a href='$row[qid]' class='list-group-item'>$row[intitule]</a>";
+        echo "<a href='user/repond_ques.php?qid=$row[qid]' class='list-group-item'>$row[intitule]</a>";
     }
     echo "</div>
 </div>";
