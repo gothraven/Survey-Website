@@ -7,7 +7,6 @@ include("../header.php");
 
 if(isset($_GET["qid"])){
     try{
-        echo "we will delete now";
         $qid = $_GET["qid"];
         $db = new PDO($dsn,$username,$password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -22,6 +21,7 @@ if(isset($_GET["qid"])){
         }
         
         $db = null;
+        redirect($pathFor['home']);
     }catch(PDOException $e){
         echo "Erreur SQL:".$e->getMessage();
     }

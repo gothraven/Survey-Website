@@ -13,7 +13,7 @@ $pathFor = [
     "logout" => "/website/logout.php",
     "adduser" => "/website/adduser.php",
     "root"   => "/website/",
-    "admin" => "/website/admin/admin.php",
+    "home" => "/website/home.php",
 ];
 
 const SKEY = '_Redirect';

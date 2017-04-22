@@ -33,13 +33,9 @@
                     <button class='btn btn-primary btn-ok' id="save">
                         Save changes
                     </button>
-
                 </div>
 
             </div>
         </div>
     </form>
 </div>
-
-
-<?php ?>

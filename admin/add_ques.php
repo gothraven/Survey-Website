@@ -6,7 +6,6 @@ $itle = 'Ajouter';
 include("../header.php");
 
 if(isset($_GET["name"])){
-    echo "on va ajouter ".$_GET["name"];
     try{
         $name = $_GET["name"];
         $db = new PDO($dsn,$username,$password);
@@ -22,6 +21,7 @@ if(isset($_GET["name"])){
         }
         
         $db = null;
+        redirect($pathFor['home']);
     }catch(PDOException $e){
         echo "Erreur SQL:".$e->getMessage();
     }
