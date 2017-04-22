@@ -21,20 +21,38 @@ echo"<div class='well'>
         <a href='$row[qid]' class='btn btn-info' role='button'>Modify</a>
         <a href='$row[qid]' class='btn btn-success' role='button'>Answers</a>
     </div>";
-}
-echo "</div>";
-include("supp_popup.php");
-?>
-<script>
-    $('#confirm-delete').on('show.bs.modal', function (e) {
-        $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-        $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
-    });
-</script>
+    }
 
-<?php
-echo "</div>"; echo "
-<div style='text-align:center'>
-    <a href='ajouter.php' class='btn btn-primary' role='button'>New</a>
-</div>"; 
+echo "</div>";
+
+include("supp_popup.php");
+
 ?>
+
+    <script>
+        $('#confirm-delete').on('show.bs.modal', function (e) {
+            $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
+            $('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
+        });
+    </script>
+
+    <?php
+echo "</div>";
+echo "<div style='text-align:center'>
+        <button class='btn btn-primary' data-toggle='modal' data-target='#add_questionaire'>
+            New
+        </button>
+</div>";
+    //admin/add_ques.php?name=test
+        //$name = "";
+        include("admin/addq_popup.php");
+?>
+
+        <p id="demo"></p>
+        <script>
+            $('#save').click(function () {
+                $name = $("input[name='nom_ques']").val();
+                $url = 'admin/add_ques.php?name=' + $name;
+                window.open($url);
+            });
+        </script>
