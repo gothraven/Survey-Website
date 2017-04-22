@@ -10,7 +10,7 @@ if(!empty($_POST)){
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         
-        $SQL = "SELECT MAX(ordre) FROM `champs` WHERE qid=8";
+        $SQL = "SELECT MAX(ordre) FROM `champs` WHERE qid=$qid";
         $result = $db->query($SQL);
         $order = $result->fetchColumn(0); 
         $order++;
