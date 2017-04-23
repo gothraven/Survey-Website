@@ -9,7 +9,7 @@
                 <form method="post" id="modif_form">
                     <label>Enter Question</label>
                     <input type="text" name="nom_champ" id="nom_champ_modif" class="form-control" />
-                    <input type="hidden" name="cid" value="59">
+                    <input type="hidden" name="cid" id="cid" value="">
                     <br />
                     <label>Select Type</label>
                     <select name="type" id="type" class="form-control">

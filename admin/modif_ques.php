@@ -38,7 +38,7 @@ include("../header.php");
                 echo"<br />
                 <div class='form-group'>
                 <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
-                <button class='close' data-href='admin/supp_ques.php?qid=$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
+                <button class='close' id='$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
                 <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
                 <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
                 <label for='text'><h3>$row[nom]</h3></label>
@@ -50,7 +50,7 @@ include("../header.php");
                 echo"<br />
                 <div class='form-group'>
                <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
-                <button class='close' data-href='admin/supp_ques.php?qid=$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
+                <button class='close' id='$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
                 <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
                 <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>
@@ -62,7 +62,7 @@ include("../header.php");
                 echo"<br />
                 <div class='form-group'>
                 <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
-                <button class='close' data-href='admin/supp_ques.php?qid=$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
+                <button class='close' id='$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
                 <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
                 <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>
@@ -75,7 +75,7 @@ include("../header.php");
                 echo"<br />
                 <div class='form-group'>
                 <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
-                <button class='close' data-href='admin/supp_ques.php?qid=$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
+                <button class='close' id='$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
                 <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
                 <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>";
@@ -93,8 +93,8 @@ include("../header.php");
                 if($mylist != null){
                     echo"<br />
                     <div class='form-group'>
-                    <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
-                    <button class='close' data-href='admin/supp_ques.php?qid=$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
+                    <a href='supp_champ.php?$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
+                    <button class='close' id='cid=$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
                     <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
                     <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
                     <label for='focusedInput'><h3>$row[nom]</h3></label>";
@@ -155,6 +155,12 @@ include("modifc_popup.php");
             });
 
             $(document).ready(function () {
+                $("button.close").click(function () {
+                    var cid = $(this).attr('id');
+                    $("[id=cid]").val(cid);
+                    //var test = $("[id=cid]").val();
+                    //alert(test);
+                });
                 $('#modif_form').on("submit", function (event) {
                     event.preventDefault();
                     if ($('#nom_champ_modif').val() == "") {
