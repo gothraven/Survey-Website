@@ -3,7 +3,13 @@
 require("../auth/EtreAuthentifie.php");
 
 if(!empty($_POST)){
-    
+/*$hostname = "localhost";
+$dbname = "projet_db";
+$username = "root";
+$password = "";
+
+$dsn = "mysql:host=$hostname;dbname=$dbname;charset=utf8";
+*/
         $name = $_POST["nom_champ"];
         $type = $_POST["type"];
         $qid = $_POST["qid"];;

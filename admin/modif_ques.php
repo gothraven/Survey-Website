@@ -53,6 +53,18 @@ include("../header.php");
                 <input class='form-control' id='email' type='email'>
                 </div>";
                 
+            }else if(strcmp($type,"Oui/Non")==0){
+                
+                    echo"<div class='form-group'>
+                    <label for='focusedInput'><h3>$row[nom]</h3></label>";
+                    echo"<div class='radio'>
+                    <label class='input-lg'><input type='radio' name='optradio'>Oui</label>
+                    </div>";
+                    echo"<div class='radio'>
+                    <label class='input-lg'><input type='radio' name='optradio'>Non</label>
+                    </div>";
+                    echo"</div>";
+                
             }else{
                 
                 $mylist = json_decode($type, true);

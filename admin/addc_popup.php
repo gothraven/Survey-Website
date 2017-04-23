@@ -8,15 +8,16 @@
             <div class="modal-body">
                 <form method="post" id="insert_form">
                     <label>Enter Question</label>
-                    <input type="text" name="name" id="nom_champ" class="form-control" />
-                    <input type="hidden" name="qid" id="qid" value="<?=$qid;?>">
+                    <input type="text" name="nom_champ" id="nom_champ" class="form-control" />
+                    <input type="hidden" name="qid" value="<?=$qid;?>">
                     <br />
                     <label>Select Type</label>
                     <select name="type" id="type" class="form-control">
                         <option value="Texte">Texte</option>
                         <option value="Nombre">Nombre</option>
-                        <option value="Liste">Liste</option>
+                        <option value="Oui/Non">Oui/Non</option>
                         <option value="Email">Email</option>
+                        <option value="Liste">Liste</option>
                     </select>
                     <br />
                     <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />
