@@ -158,8 +158,6 @@ include("modifc_popup.php");
                 $("button.close").click(function () {
                     var cid = $(this).attr('id');
                     $("[id=cid]").val(cid);
-                    //var test = $("[id=cid]").val();
-                    //alert(test);
                 });
                 $('#modif_form').on("submit", function (event) {
                     event.preventDefault();
