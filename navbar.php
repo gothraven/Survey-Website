@@ -2,7 +2,7 @@
     <!--navbar-inverse-->
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/website/">WebSiteName</a>
+            <a class="navbar-brand" href="/website/">AskMe</a>
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="/website/home.php">Home</a></li>
