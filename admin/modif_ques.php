@@ -16,8 +16,43 @@ include("../header.php");
                 $SQL = "SELECT intitule FROM questionnaires WHERE qid=$qid";
                 $result = $db->query($SQL);
                 $name = $result->fetchColumn(0);
-                echo "<h2 style='text-align:center;'>".$name."</h2>";    
             ?>
+                <button class="close pull-left" data-toggle='modal' data-target='#modifname_ques_Modal'>
+                    <h2><b><?=$name;?></b></h2>
+                </button>
+                <?php
+    include("modifname_popup.php");
+?>
+                    <script>
+                        $(document).ready(function () {
+                            $('#modifques_form').on("submit", function (event) {
+                                event.preventDefault();
+                                if ($('#nom_ques').val() == "") {
+                                    alert("Nom de questionaire ne doit pas etre vide");
+                                } else {
+                                    $.ajax({
+                                        url: "modify_quesname.php",
+                                        method: "POST",
+                                        data: $('#modifques_form').serialize(),
+                                        beforeSend: function () {
+                                            $('#modify').val("Modifying");
+                                        },
+                                        success: function (data) {
+                                            $('#modifques_form')[0].reset();
+                                            $('#modifname_ques_Modal').modal('hide');
+                                            if (data == 'exit_success') {
+                                                location.reload();
+                                            } else {
+                                                alert("Something wrong happned");
+                                                location.reload();
+                                            }
+
+                                        }
+                                    });
+                                }
+                            });
+                        });
+                    </script>
         </div>
     </div>
 
@@ -162,7 +197,7 @@ include("modifc_popup.php");
                 $('#modif_form').on("submit", function (event) {
                     event.preventDefault();
                     if ($('#nom_champ_modif').val() == "") {
-                        alert("Name is required you did print");
+                        alert("Name is required");
                     } else {
                         $.ajax({
                             url: "modif_champ.php",
