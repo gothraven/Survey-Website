@@ -10,15 +10,15 @@ echo "<h3 class='well' style='text-align:center'> Hello ".$idm->getIdentity().".
 ?>
 
         <?php
-  if($idm->getRole() == "user"){
+if($idm->getRole() == "user"){
     
     include("user/user.php");   
     
-  }else if($idm->getRole() == "admin"){
+}else if($idm->getRole() == "admin"){
    
-   include("admin/admin.php");
+    include("admin/admin.php");
    
- }
+}
  ?>
 
             <?php

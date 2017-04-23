@@ -15,6 +15,7 @@ if(!empty($_POST)){
         $result = $db->query($SQL);
         $order = $result->fetchColumn(0); 
         $order++;
+    
         $SQL = "INSERT INTO `champs` (`cid`, `qid`, `nom`, `type`, `ordre`) VALUES (NULL,?,?,?,?)";
         $set = $db->prepare($SQL);
         $result = $set->execute(array($qid,$name,$type,$order));

@@ -46,8 +46,5 @@ echo "<div style='text-align:center'>
                 $name = $("input[name='nom_ques']").val();
                 $url = 'admin/add_ques.php?name=' + $name;
                 window.open($url);
-                //window.location.replace($url);
-                //window.close();
-                //window.open ($url,'_self',false);
             });
         </script>

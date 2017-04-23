@@ -5,6 +5,7 @@ require("../auth/EtreAuthentifie.php");
 $title = 'Modifer';
 include("../header.php");
 ?>
+
     <div class="well">
         <div class="container">
             <?php
@@ -34,23 +35,22 @@ include("../header.php");
             $type = $row{'type'};
             
             if(strcmp($type,"Texte")==0){
-                
-                echo"</br>
-                <form><div class='form-group'>
+                echo"<br />
+                <div class='form-group'>
                 <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
-                <a href='modif_champ.php?cid=$row[cid]' class ='close' class ='close' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></a>
+                <button class='close' data-href='admin/supp_ques.php?qid=$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
                 <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
                 <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
                 <label for='text'><h3>$row[nom]</h3></label>
                 <textarea class='form-control' rows='3' id='text'></textarea>
-                </div></form>";
+                </div>";
                 
             }else if(strcmp($type,"Nombre")==0){
                 
-                echo"</br>
+                echo"<br />
                 <div class='form-group'>
                <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
-                <a href='modif_champ.php?cid=$row[cid]' class ='close' class ='close' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></a>
+                <button class='close' data-href='admin/supp_ques.php?qid=$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
                 <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
                 <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>
@@ -59,10 +59,10 @@ include("../header.php");
                 
             }else if(strcmp($type,"Email")==0){
                 
-                echo"</br>
+                echo"<br />
                 <div class='form-group'>
                 <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
-                <a href='modif_champ.php?cid=$row[cid]' class ='close' class ='close' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></a>
+                <button class='close' data-href='admin/supp_ques.php?qid=$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
                 <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
                 <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>
@@ -72,10 +72,10 @@ include("../header.php");
                 
             }else if(strcmp($type,"Oui/Non")==0){
                 
-                echo"</br>
+                echo"<br />
                 <div class='form-group'>
                 <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
-                <a href='modif_champ.php?cid=$row[cid]' class ='close' class ='close' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></a>
+                <button class='close' data-href='admin/supp_ques.php?qid=$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
                 <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
                 <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>";
@@ -91,10 +91,10 @@ include("../header.php");
                 
                 $mylist = json_decode($type, true);
                 if($mylist != null){
-                    echo"</br>
+                    echo"<br />
                     <div class='form-group'>
                     <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
-                    <a href='modif_champ.php?cid=$row[cid]' class ='close' class ='close' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></a>
+                    <button class='close' data-href='admin/supp_ques.php?qid=$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
                     <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
                     <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
                     <label for='focusedInput'><h3>$row[nom]</h3></label>";
@@ -115,14 +115,15 @@ include("../header.php");
         ?>
         </div>
     </div>
+
     <?php
-//data-href='add_champ.php?qid=$qid'
 echo "<div style='text-align:center'>
 <button class='btn btn-primary' data-toggle='modal' data-target='#add_data_Modal'>New</button>
 </div>";
 include("addc_popup.php");
 include("modifc_popup.php");
 ?>
+
         <script>
             $(document).ready(function () {
                 $('#insert_form').on("submit", function (event) {
@@ -141,11 +142,9 @@ include("modifc_popup.php");
                                 $('#insert_form')[0].reset();
                                 $('#add_data_Modal').modal('hide');
                                 if (data == 'exit_success') {
-                                    $('#loginModal').hide();
                                     location.reload();
                                 } else {
                                     alert("Something wrong happned");
-                                    $('#loginModal').hide();
                                     location.reload();
                                 }
 
@@ -154,20 +153,36 @@ include("modifc_popup.php");
                     }
                 });
             });
-        </script>
-        <script>
-            /*
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        $(document).ready(function () {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            $('#champ').on("supp_champ", function (event) {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                event.preventDefault();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                var cid = $('#supp_champ').val();
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                window.alert(cid);
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            });
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        });
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        */
+            $(document).ready(function () {
+                $('#modif_form').on("submit", function (event) {
+                    event.preventDefault();
+                    if ($('#nom_champ_modif').val() == "") {
+                        alert("Name is required you did print");
+                    } else {
+                        $.ajax({
+                            url: "modif_champ.php",
+                            method: "POST",
+                            data: $('#modif_form').serialize(),
+                            beforeSend: function () {
+                                $('#modif').val("Modifying");
+                            },
+                            success: function (data) {
+                                $('#modif_form')[0].reset();
+                                $('#modif_data_Modal').modal('hide');
+                                if (data == 'exit_success') {
+                                    location.reload();
+                                } else {
+                                    alert("Something wrong happned");
+                                    location.reload();
+                                }
+                            }
+                        });
+                    }
+                });
+            });
         </script>
+
         <?php
-echo"</div>"; //end of first div
 include("../footer.php");
 ?>

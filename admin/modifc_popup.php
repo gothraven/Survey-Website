@@ -6,10 +6,10 @@
                 <h4 class="modal-title">Modifer la question</h4>
             </div>
             <div class="modal-body">
-                <form method="post" id="insert_form">
+                <form method="post" id="modif_form">
                     <label>Enter Question</label>
-                    <input type="text" name="nom_champ" id="nom_champ" class="form-control" />
-                    <input type="hidden" name="qid" value="<?=$qid;?>">
+                    <input type="text" name="nom_champ" id="nom_champ_modif" class="form-control" />
+                    <input type="hidden" name="cid" value="59">
                     <br />
                     <label>Select Type</label>
                     <select name="type" id="type" class="form-control">
@@ -20,7 +20,7 @@
                         <option value="Liste">Liste</option>
                     </select>
                     <br />
-                    <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />
+                    <input type="submit" name="modif" id="modif" value="Modify" class="btn btn-success" />
 
                 </form>
             </div>
