@@ -24,7 +24,7 @@ if(isset($_GET["qid"])){
         }
         
         $db = null;
-        redirect($pathFor['home']);
+        header('Location: ' . $_SERVER['HTTP_REFERER']);
     }catch(PDOException $e){
         echo "Erreur SQL:".$e->getMessage();
     }

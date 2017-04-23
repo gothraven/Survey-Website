@@ -1,9 +1,9 @@
-<div id="add_data_Modal" class="modal fade">
+<div id="modif_data_Modal" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Ajouter une nouvell question</h4>
+                <h4 class="modal-title">Modifer la question</h4>
             </div>
             <div class="modal-body">
                 <form method="post" id="insert_form">
