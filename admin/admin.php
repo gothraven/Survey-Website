@@ -11,11 +11,12 @@ echo"<div class='well'>
     
     foreach($res as $row){
         echo "<div class='list-group'>
-        <a href='admin/repond_ques.php?qid=$row[qid]' onClick=\"return confirm('Voulez allez voir la questionaire et repondre?');\" class='list-group-item' >$row[intitule]</a>
-        <button class='btn btn-danger' data-href='admin/supp_ques.php?qid=$row[qid]' data-toggle='modal' data-target='#confirm-delete'>Delete</button>
-        <a href='admin/modif_ques.php?qid=$row[qid]' class='btn btn-info' role='button'>Modify</a>
-        <a href='admin/result_ques.php?qid=$row[qid]' class='btn btn-success' role='button'>Answers</a>";
-        echo "</div>";
+        <a href='admin/repond_ques.php?qid=$row[qid]' onClick=\"return confirm('Voulez allez voir la questionaire et repondre?');\" class='list-group-item' ><h5><b>$row[intitule]</b></h5></a>
+        <button class='close' data-href='admin/supp_ques.php?qid=$row[qid]' data-toggle='modal' data-target='#confirm-delete'><i class='glyphicon glyphicon-trash'></i></button>
+        <a href='admin/modif_ques.php?qid=$row[qid]' class='close' role='button'><i class='glyphicon glyphicon-cog'></i></a>
+        <a href='admin/result_ques.php?qid=$row[qid]' class='close pull-left' role='button'><i class='glyphicon glyphicon-search'></i></a>";
+        echo "</div>
+        <br />";
     }
 
 echo "</div>";
@@ -27,7 +28,6 @@ echo "</div>";
     <script>
         $('#confirm-delete').on('show.bs.modal', function (e) {
             $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
-            //$('.debug-url').html('Delete URL: <strong>' + $(this).find('.btn-ok').attr('href') + '</strong>');
         });
     </script>
 
@@ -36,7 +36,7 @@ echo "</div>";
 echo "</div>";
 echo "<div style='text-align:center'>
         <button class='btn btn-primary' data-toggle='modal' data-target='#add_questionaire'>
-            New
+            <i class='glyphicon glyphicon-plus'></i>
         </button>
 </div>";
         include("admin/addq_popup.php");
@@ -48,3 +48,5 @@ echo "<div style='text-align:center'>
                 window.open($url);
             });
         </script>
+        <?php
+?>

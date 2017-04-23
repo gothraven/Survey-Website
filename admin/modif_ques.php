@@ -153,7 +153,7 @@ include("../header.php");
 
     <?php
 echo "<div style='text-align:center'>
-<button class='btn btn-primary' data-toggle='modal' data-target='#add_data_Modal'>New</button>
+<button class='btn btn-primary' data-toggle='modal' data-target='#add_data_Modal'><i class='glyphicon glyphicon-plus'></i></button>
 </div>";
 include("addc_popup.php");
 include("modifc_popup.php");
