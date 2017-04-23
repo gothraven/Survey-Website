@@ -1,12 +1,5 @@
 <?php
-          //j'explique les etape de travail
-echo"<ul>
-<li>on ouvre la base de donner</li>
-<li>SELECT intitule, qid FROM questionnaires</li>
-<li> on garde le 'qid' pour bech ki y'clicker l'utilisateur yroh la page li fiha l'questionaire li khayro</li>
-<li>n'imprimiw avec une strecture de list div kima li rani mdayerha dorka</li>
-</ul>";
-
+echo"<div class='container'>";
 echo"<div class='well'>
 <div class='list-group'>";
     
@@ -17,7 +10,9 @@ echo"<div class='well'>
     $SQL = "SELECT qid,intitule FROM questionnaires";
     $res = $db->query($SQL); 
     foreach($res as $row){
-        echo "<a href='user/repond_ques.php?qid=$row[qid]' class='list-group-item'>$row[intitule]</a>";
+        echo "<a href='user/repond_ques.php?qid=$row[qid]' class='list-group-item'><h4><b>$row[intitule]</b></h4></a>";
     }
+
 echo "</div>
 </div>";
+echo "</div>";

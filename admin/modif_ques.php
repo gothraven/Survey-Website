@@ -5,10 +5,10 @@ require("../auth/EtreAuthentifie.php");
 $title = 'Modifer';
 include("../header.php");
 ?>
-
-    <div class="well">
-        <div class="container">
-            <?php
+    <div class="container">
+        <div class="well">
+            <div class="container">
+                <?php
                 $db = new PDO($dsn,$username,$password);
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -17,45 +17,45 @@ include("../header.php");
                 $result = $db->query($SQL);
                 $name = $result->fetchColumn(0);
             ?>
-                <button class="close pull-left" data-toggle='modal' data-target='#modifname_ques_Modal'>
-                    <h2><b><?=$name;?></b></h2>
-                </button>
-                <?php
+                    <button class="close pull-left" data-toggle='modal' data-target='#modifname_ques_Modal'>
+                        <h2><b><?=$name;?></b></h2>
+                    </button>
+                    <?php
     include("modifname_popup.php");
 ?>
-                    <script>
-                        $(document).ready(function () {
-                            $('#modifques_form').on("submit", function (event) {
-                                event.preventDefault();
-                                if ($('#nom_ques').val() == "") {
-                                    alert("Nom de questionaire ne doit pas etre vide");
-                                } else {
-                                    $.ajax({
-                                        url: "modify_quesname.php",
-                                        method: "POST",
-                                        data: $('#modifques_form').serialize(),
-                                        beforeSend: function () {
-                                            $('#modify').val("Modifying");
-                                        },
-                                        success: function (data) {
-                                            $('#modifques_form')[0].reset();
-                                            $('#modifname_ques_Modal').modal('hide');
-                                            if (data == 'exit_success') {
-                                                location.reload();
-                                            } else {
-                                                alert("Something wrong happned");
-                                                location.reload();
-                                            }
+                        <script>
+                            $(document).ready(function () {
+                                $('#modifques_form').on("submit", function (event) {
+                                    event.preventDefault();
+                                    if ($('#nom_ques').val() == "") {
+                                        alert("Nom de questionaire ne doit pas etre vide");
+                                    } else {
+                                        $.ajax({
+                                            url: "modify_quesname.php",
+                                            method: "POST",
+                                            data: $('#modifques_form').serialize(),
+                                            beforeSend: function () {
+                                                $('#modify').val("Modifying");
+                                            },
+                                            success: function (data) {
+                                                $('#modifques_form')[0].reset();
+                                                $('#modifname_ques_Modal').modal('hide');
+                                                if (data == 'exit_success') {
+                                                    location.reload();
+                                                } else {
+                                                    alert("Something wrong happned");
+                                                    location.reload();
+                                                }
 
-                                        }
-                                    });
-                                }
+                                            }
+                                        });
+                                    }
+                                });
                             });
-                        });
-                    </script>
+                        </script>
+            </div>
         </div>
     </div>
-
     <div class="container">
         <div class='list-group'>
             <?php

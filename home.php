@@ -6,7 +6,9 @@ $title = 'Accueil';
 include("header.php");
 ?>
     <?php
+echo"<div class='container'>";
 echo "<h3 class='well' style='text-align:center'> Hello ".$idm->getIdentity().". Your uid is: ".$idm->getUid().". Your role is: ".$idm->getRole()."</h3>";
+echo"</div>";
 ?>
 
         <?php
