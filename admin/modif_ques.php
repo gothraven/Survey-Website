@@ -16,7 +16,7 @@ include("../header.php");
                 $SQL = "SELECT intitule FROM questionnaires WHERE qid=$qid";
                 $result = $db->query($SQL);
                 $name = $result->fetchColumn(0);
-            ?>
+                ?>
                     <button class="close pull-left" data-toggle='modal' data-target='#modifname_ques_Modal'>
                         <h2><b><?=$name;?></b></h2>
                     </button>
@@ -58,12 +58,11 @@ include("../header.php");
     </div>
     <div class="container">
         <div class='list-group'>
-            <?php
+            <div class='jumbotron'>
+                <div class='list-group'>
+                    <?php
         $SQL = "SELECT * FROM champs WHERE qid = $qid ORDER BY ordre";
         $result = $db->query($SQL);
-        
-        echo"<div class='jumbotron'>";
-        echo"<div class='list-group'>";
             
         foreach($result as $row){
             
@@ -145,9 +144,10 @@ include("../header.php");
             }
 
         }
-        echo"</div>";
-        echo"</div>";
+        
         ?>
+                </div>
+            </div>
         </div>
     </div>
 
