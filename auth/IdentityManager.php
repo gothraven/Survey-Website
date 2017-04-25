@@ -102,7 +102,7 @@ class IdentityManager implements \ArrayAccess
     public function getRoles()
     {
         if (!$this->hasRoles()) {
-            return null; //self::GUEST;
+            return null;
         }
         return $this->storage[self::IDKEY]['roles'];
     }
@@ -111,10 +111,7 @@ class IdentityManager implements \ArrayAccess
     {
         $this->storage[self::IDKEY]['roles'] = $roles;
     }
-
-
-
-
+    
     /**
      * Whether a offset exists
      * @link http://php.net/manual/en/arrayaccess.offsetexists.php

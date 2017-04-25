@@ -6,14 +6,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- JQuery script -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-
-    <!-- Bootstrap script -->
-    <!--script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script-->
-
-    <!-- Latest compiled and minified CSS -->
-    <!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"-->
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -29,14 +24,98 @@
     <title>
         <?= $title??"" ?>
     </title>
+
     <style>
         .modal-body p {
             word-wrap: break-word;
         }
     </style>
+    <?php
+    if($title == "Welcome page"){
+echo"<style>
+        #section1 {
+            padding-top: 100px;
+            height: 500px;
+        }
+        
+        #section2 {
+            padding-top: 100px;
+            height: 500px;
+        }
+        
+        #section3 {
+            padding-top: 100px;
+            height: 500px;
+        }
+        
+        #section41 {
+            padding-top: 100px;
+            height: 500px;
+        }
+        
+        #section42 {
+            padding-top: 100px;
+            height: 500px;
+        }
+        
+        body {
+            position: relative;
+            font: 20px Montserrat, sans-serif;
+            line-height: 1.8;
+            color: #f5f6f7;
+        }
+        
+        p {
+            font-size: 16px;
+        }
+        
+        .margin {
+            margin-bottom: 45px;
+        }
+        
+        .bg-1 {
+            background-color: #1abc9c;
+            color: #ffffff;
+        }
+        
+        .bg-2 {
+            background-color: #474e5d;
+            color: #ffffff;
+        }
+        
+        .bg-3 {
+            background-color: #ffffff;
+            color: #555555;
+        }
+        
+        .bg-4 {
+            background-color: #2f2f2f;
+            color: #fff;
+        }
+        
+        .container-fluid {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        
+        .navbar {
+            padding-top: 1px;
+            padding-bottom: 1px;
+            border: 0;
+            border-radius: 0;
+            margin-bottom: 0;
+            font-size: 15px;
+            letter-spacing: 5px;
+        }
+        
+        .navbar-nav li a:hover {
+            color: #1abc9c !important;
+        }
+    </style>";
+        }
+?>
 
 </head>
-
 
 <body>
     <?php

@@ -4,42 +4,33 @@ include("header.php");
 
 echo "<p class=\"error\">".($error??"")."</p>";
 ?>
-
-<div class='row'>
     <div class="col-md-4"></div>
-    <div class='col-md-4'>
+    <div class='container col-sm-4'>
+        <h2>Authentifiez-vous</h2>
         <div class="well">
-            <h2 style="text-align:center">Authentifiez-vous</h2>
-            <form class='input-group' method="post">
-                <!--legend>Authentifiez-vous</legend-->
-                <table>
-                    <tr>
-                        <td>
-                            <label for="inputNom" class="control-label">Login</label>
-                        </td>
-                        <td>
-                            <input type="text" name="login" size="20" class="form-control" id="inputLogin" required placeholder="nom d'utilisateur" required value="<?= $data['login']??'' ?>">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <label for="inputMDP" class="control-label">MDP </label>
-                        </td>
-                        <td>
-                            <input type="password" name="password" size="20" class="form-control" required id="inputMDP" placeholder="Mot de passe">
-                        </td>
-                    </tr>
-                </table>
+            <form class='form-horizontal' method="post">
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Connexion</button>
-                    <span class="pull-right"><a href="<?= $pathFor['adduser'] ?>">S'enregistrer</a></span>
+                    <label for="inputNom" class="control-label col-sm-2">Login</label>
+                    <div class="col-sm-10">
+                        <input type="text" name="login" size="20" class="form-control" id="inputLogin" required placeholder="User Name" required value="<?= $data['login']??'' ?>">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="inputMDP" class="control-label col-sm-2">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="password" size="20" class="form-control" required id="inputMDP" placeholder="Password">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Log In</button>
+                        <span class="pull-right"><a href="<?= $pathFor['adduser'] ?>">Sign up</a></span>
+                    </div>
                 </div>
             </form>
         </div>
     </div>
     <div class="col-md-4"></div>
-</div>
-
-<?php
+    <?php
 
 include("footer.php");

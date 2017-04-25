@@ -2,82 +2,48 @@
 $title = 'Welcome page';
 include("header.php");
 ?>
-    <div class="container">
-        <h1 class="text-primary">Page principale</h1>
-        <div class="jumbotron">
-            <table class="table table-hover">
-                <thead>
-                    <tr class="info">
-                        <th>Questionaires</th>
-                        <th></th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>questionaire - 1</td>
-                        <td>20/02/2017</td>
-                        <td>Dr. Maha</td>
-                    </tr>
-                    <tr>
-                        <td>questionaire - 2</td>
-                        <td>22/03/2017</td>
-                        <td>Dr. Joe</td>
-                    </tr>
-                    <tr>
-                        <td>questionaire - 3</td>
-                        <td>30/01/2017</td>
-                        <td>Dr. Kevin</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
+
+    <!-- First Container -->
+    <div id="section1" class="container-fluid bg-1 text-center">
+        <h3 class="margin">Who Am I?</h3>
+        <img src="bird.jpg" class="img-responsive img-circle margin" style="display:inline" alt="Bird" width="350" height="350">
+        <h3>I'm an adventurer</h3>
+    </div>
+
+    <!-- Second Container -->
+    <div id="section2" class="container-fluid bg-2 text-center">
+        <h3 class="margin">What Am I?</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+        <a href="#" class="btn btn-default btn-lg">
+            <span class="glyphicon glyphicon-search"></span> Search
+        </a>
+    </div>
+
+    <!-- Third Container (Grid) -->
+    <div id="section3" class="container-fluid bg-3 text-center">
+        <h3 class="margin">Where To Find Me?</h3>
+        <br>
         <div class="row">
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <p>test</p>
-                </div>
+            <div class="col-sm-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <img src="birds1.jpg" class="img-responsive margin" style="width:100%" alt="Image">
             </div>
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <p>text</p>
-                </div>
+            <div class="col-sm-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <img src="birds2.jpg" class="img-responsive margin" style="width:100%" alt="Image">
             </div>
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <p>text</p>
-                </div>
+            <div class="col-sm-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <img src="birds3.jpg" class="img-responsive margin" style="width:100%" alt="Image">
             </div>
-        </div>
-        <div class="well well-lg">
-            <dl>
-                <dt>QUESTIONAIRE - 1</dt>
-                <dd>
-                    <pre><p class="text-info">question about health</p><kbd>ctrl + 1</kbd></pre>
-                </dd>
-                <dt>QUESTIONAIRE - 2</dt>
-                <dd>
-                    <pre><p class="text-info">question about football</p><kbd>ctrl + 2</kbd></pre>
-                </dd>
-                <dd>
-                    <pre><p class="text-info">question about football</p><kbd>ctrl + 2</kbd></pre>
-                </dd>
-            </dl>
-            <div class="alert alert-info fade in">
-                <a href="#" class="close" data-dismiss="alert" aria-label="close">×</a>
-                <strong>Info!</strong> This alert box could indicate a neutral informative change or action.
-            </div>
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                    90%
-                </div>
-            </div>
-            <ul class="pager">
-                <li class="previous"><a href="#">Previous</a></li>
-                <li class="next"><a href="home.php">Next</a></li>
-            </ul>
         </div>
     </div>
+
+    <!-- Footer -->
+    <footer class="container-fluid bg-4 text-center">
+        <p>Bootstrap Theme Made By <a href="https://www.w3schools.com">www.w3schools.com</a></p>
+    </footer>
+
     <?php 
     include("footer.php");
     ?>
