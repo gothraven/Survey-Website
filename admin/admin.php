@@ -5,8 +5,8 @@ echo"<div class='well'>
     $db = new PDO($dsn,$username,$password);
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    
-    $SQL = "SELECT qid,intitule FROM questionnaires";
+    $uid = $idm->getUid();
+    $SQL = "SELECT qid,intitule FROM questionnaires WHERE uid=$uid";
     $res = $db->query($SQL);
     
     foreach($res as $row){

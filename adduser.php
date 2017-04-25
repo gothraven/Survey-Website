@@ -9,7 +9,7 @@ if (empty($_POST['login'])) {
 
 $error = "";
 
-foreach (['nom', 'prenom', 'login', 'mdp', 'mdp2'] as $name) {
+foreach (['nom', 'prenom', 'login', 'mdp', 'mdp2', 'role'] as $name) {
     if (empty($_POST[$name])) {
         $error .= "La valeur du champs '$name' ne doit pas être vide";
     } else {
@@ -19,7 +19,7 @@ foreach (['nom', 'prenom', 'login', 'mdp', 'mdp2'] as $name) {
 
 
 // Vérification si l'utilisateur existe
-$SQL = "SELECT userid FROM users WHERE login=?";
+$SQL = "SELECT uid FROM users WHERE login=?";
 $stmt = $db->prepare($SQL);
 $res = $stmt->execute([$data['login']]);
 
@@ -37,7 +37,7 @@ if (!empty($error)) {
 }
 
 
-foreach (['nom', 'prenom', 'login', 'mdp'] as $name) {
+foreach (['nom', 'prenom', 'login', 'mdp', 'role'] as $name) {
     $clearData[$name] = $data[$name];
 }
 
@@ -49,7 +49,8 @@ $passwordFunction =
 $clearData['mdp'] = $passwordFunction($data['mdp']);
 
 try {
-    $SQL = "INSERT INTO users(nom,prenom,login,mdp) VALUES (:nom,:prenom,:login,:mdp)";
+    $SQL = "INSERT INTO users(nom,prenom,login,mdp,role) VALUES (:nom,:prenom,:login,:mdp,:role)";
+    //$SQL = "INSERT INTO users(nom,prenom,login,mdp) VALUES (:nom,:prenom,:login,:mdp)";
     $stmt = $db->prepare($SQL);
     $res = $stmt->execute($clearData);
     $id = $db->lastInsertId();

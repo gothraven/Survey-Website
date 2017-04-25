@@ -22,4 +22,5 @@ This website is a survey platform.
 * Other guidelines
 
 ### Who do I talk to? ###
+
 * for the moment i must stay annonymous for some security reasons

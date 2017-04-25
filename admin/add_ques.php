@@ -7,13 +7,14 @@ include("../header.php");
 
 if(isset($_GET["name"])){
     try{
+        $uid = $idm->getUid();
         $name = $_GET["name"];
         $db = new PDO($dsn,$username,$password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-        $SQL = "INSERT INTO `questionnaires` (`qid`, `intitule`, `uid`) VALUES (NULL, ?, 1)";
+        $SQL = "INSERT INTO `questionnaires` (`qid`, `intitule`, `uid`) VALUES (NULL, ?, ?)";
         $set = $db->prepare($SQL);
-        $result = $set->execute([$name]);
+        $result = $set->execute(array($name,$uid));
         
         if(!$result){
             echo "<p>Erreur de ajout<p>\n";
