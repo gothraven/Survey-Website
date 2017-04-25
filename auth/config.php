@@ -4,7 +4,7 @@ $authTableData = [
     'table' => 'users',
     'idfield' => 'login',
     'cfield' => 'mdp',
-    'uidfield' => 'userid',
+    'uidfield' => 'uid',
     'rfield' => 'role',
 ];
 

@@ -13,6 +13,6 @@ echo"<div class='well'>
         echo "<a href='user/repond_ques.php?qid=$row[qid]' class='list-group-item'><h4><b>$row[intitule]</b></h4></a>";
     }
 
-echo "</div>
-</div>";
+echo "</div>";
+echo "</div>";
 echo "</div>";
