@@ -2,8 +2,8 @@
 
 include("../db_config.php");
 
-//if(isset($_POST["cid"])){
-        $cid = 51; //$_POST["cid"];
+if(isset($_POST["cid"])){
+        $cid = $_POST["cid"];
         
         $db = new PDO($dsn,$username,$password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -17,10 +17,9 @@ include("../db_config.php");
         $result = $db->query($SQL);
     
         foreach($result as $row){
-            echo "$type ";
-            echo "$row[valeur]";
+            echo "<p>$row[valeur]</p>";
         }
         
         $db = null;    
-//}
+}
 ?>

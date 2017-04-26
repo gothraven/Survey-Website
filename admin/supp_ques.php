@@ -22,7 +22,6 @@ if(isset($_GET["qid"])){
         }else{ 
             echo "<p>La suppression a été effectuée</p>";
         }
-        
         $db = null;
         header('Location: ' . $_SERVER['HTTP_REFERER']);
     }catch(PDOException $e){

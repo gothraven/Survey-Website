@@ -19,9 +19,9 @@
         <div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav">
-                    <li><a href="#section1">Section 1</a></li>
-                    <li><a href="#section2">Section 2</a></li>
-                    <li><a href="#section3">Section 3</a></li>
+                    <li><a href="#section1">Who ?</a></li>
+                    <li><a href="#section2">How ?</a></li>
+                    <li><a href="#section3">Admin ?</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/website/adduser.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

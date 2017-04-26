@@ -13,6 +13,14 @@ include("../header.php");
                 $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                 $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
                 $qid = $_GET["qid"];
+                
+                //security check
+                $uid = $idm->getUid();
+                $SQL = "SELECT uid FROM questionnaires WHERE qid=$qid";
+                $result = $db->query($SQL);
+                $id = $result->fetchColumn(0);
+                if($id != $uid)redirect($pathFor['home']);
+                
                 $SQL = "SELECT intitule FROM questionnaires WHERE qid=$qid";
                 $result = $db->query($SQL);
                 $name = $result->fetchColumn(0);
@@ -122,7 +130,6 @@ include("../header.php");
                 echo"</div>";
                 
             }else{
-                
                 $mylist = json_decode($type, true);
                 if($mylist != null){
                     echo"<br />
@@ -139,10 +146,8 @@ include("../header.php");
                     </div>";
                     }
                     echo"</div>";    
-                }
-                
+                } 
             }
-
         }
         
         ?>

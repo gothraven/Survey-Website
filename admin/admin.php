@@ -7,9 +7,9 @@ echo"<div class='well'>
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $uid = $idm->getUid();
     $SQL = "SELECT qid,intitule FROM questionnaires WHERE uid=$uid";
-    $res = $db->query($SQL);
+    $result = $db->query($SQL);
     
-    foreach($res as $row){
+    foreach($result as $row){
         echo "<div class='list-group'>
         <a href='admin/repond_ques.php?qid=$row[qid]' onClick=\"return confirm('Voulez allez voir la questionaire et repondre?');\" class='list-group-item' ><h5><b>$row[intitule]</b></h5></a>
         <button class='close' data-href='admin/supp_ques.php?qid=$row[qid]' data-toggle='modal' data-target='#confirm-delete'><i class='glyphicon glyphicon-trash'></i></button>
