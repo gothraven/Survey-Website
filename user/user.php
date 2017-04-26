@@ -8,7 +8,7 @@ echo"<div class='well'>
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     
     $SQL = "SELECT qid,intitule FROM questionnaires";
-    $res = $db->query($SQL); 
+    $res = $db->query($SQL);
     foreach($res as $row){
         echo "<a href='user/repond_ques.php?qid=$row[qid]' class='list-group-item'><h4><b>$row[intitule]</b></h4></a>";
     }

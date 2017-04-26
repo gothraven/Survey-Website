@@ -27,9 +27,9 @@ if(isset($_GET["qid"])){
     $name = $result->fetchColumn(0);
 }
 ?>
-                    <button class="close pull-left" data-toggle='modal' data-target='#modif_ques_Modal'>
+                    <div class="close pull-left" data-toggle='modal' data-target='#modif_ques_Modal'>
                         <h2><b>Resultat : <?=$name;?></b></h2>
-                    </button>
+                    </div>
             </div>
         </div>
     </div>
@@ -64,7 +64,7 @@ if(isset($_GET["qid"])){
         </script>
         <script>
             $(document).ready(function () {
-                $(document).on('click', '.pull-left', function () {
+                $(document).on('click', 'button.pull-left', function () {
 
                     var id = $(this).attr("id");
                     $.ajax({
