@@ -21,7 +21,8 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#section1">Who ?</a></li>
                     <li><a href="#section2">How ?</a></li>
-                    <li><a href="#section3">Admin ?</a></li>
+                    <li><a href="#section3">Why ?</a></li>
+					<li><a href="#section4">Admin ?</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="/website/adduser.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>

@@ -48,16 +48,11 @@ echo"<style>
             height: 500px;
         }
         
-        #section41 {
+        #section4 {
             padding-top: 100px;
             height: 500px;
         }
-        
-        #section42 {
-            padding-top: 100px;
-            height: 500px;
-        }
-        
+         
         body {
             position: relative;
             font: 20px Montserrat, sans-serif;
