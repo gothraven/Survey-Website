@@ -1,11 +1,11 @@
-<div id="check-question" class="modal fade">
+<div id="done-answering" class="modal fade">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Question</h4>
+                <h4 class="modal-title"></h4>
             </div>
-            <div class="modal-body" id="question_here">
+            <div class="modal-body" id="reference_code_here">
 
             </div>
             <div class="modal-footer">

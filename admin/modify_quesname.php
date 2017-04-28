@@ -3,7 +3,6 @@
 include("../db_config.php");
 
 if(!empty($_POST)){
-
         $name = $_POST["nom_ques"];
         $qid = $_POST["qid"];
         $db = new PDO($dsn,$username,$password);
@@ -20,7 +19,6 @@ if(!empty($_POST)){
             echo "exit_success";
         }
         $db = null;
-    
 }
 
 ?>

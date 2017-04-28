@@ -65,7 +65,6 @@ if(isset($_GET["qid"])){
         <script>
             $(document).ready(function () {
                 $(document).on('click', 'button.pull-left', function () {
-
                     var id = $(this).attr("id");
                     $.ajax({
                         url: "send_answers.php",

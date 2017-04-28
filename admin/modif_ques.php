@@ -43,7 +43,7 @@ include("../header.php");
                                             method: "POST",
                                             data: $('#modifques_form').serialize(),
                                             beforeSend: function () {
-                                                $('#modify').val("Modifying");
+                                                $('#modify').val("Modifying...");
                                             },
                                             success: function (data) {
                                                 $('#modifques_form')[0].reset();
@@ -54,7 +54,6 @@ include("../header.php");
                                                     alert("Something wrong happned");
                                                     location.reload();
                                                 }
-
                                             }
                                         });
                                     }

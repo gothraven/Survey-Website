@@ -30,7 +30,7 @@ if(isset($_POST["cid"])){
         }else if(strcmp($type,"Email")==0){
              echo"<div class='form-group'>
                 <label for='focusedInput'><h3>$name</h3></label>
-                <input class='form-control' id='number' type='number'>
+                <input class='form-control' id='mail' type='mail'>
                 </div>";
         }else if(strcmp($type,"Oui/Non")==0){
             echo"<div class='form-group'>
