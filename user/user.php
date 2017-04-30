@@ -15,7 +15,6 @@ echo"<div class='well'>
     echo "</div>";
     echo "</div>";
     include("repond_questionnaire.php");
-    include("done_answering.php");
     ?>
 
     <script>
@@ -59,12 +58,12 @@ echo"<div class='well'>
                     },
                     success: function(data) {
                         $('#questionnaire_form')[0].reset();
-                        $('#repond-questionnaire').modal('hide');
+                        //$('#repond-questionnaire').modal('hide');
                         if (data == 'exit_failure') {
                             alert("something wrong happened");
                         } else {
-                            alert(data);
-                            //$('#reference_code_here').html(data);
+                            $('#questionnaire_here').empty();
+                            $('#reference_code_here').html(data);
                             //$('#repond-questionnaire').modal('show');
                         }
                     }
