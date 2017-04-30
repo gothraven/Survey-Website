@@ -15,17 +15,13 @@ if(isset($_GET["name"])){
         $SQL = "INSERT INTO `questionnaires` (`qid`, `intitule`, `uid`) VALUES (NULL, ?, ?)";
         $set = $db->prepare($SQL);
         $result = $set->execute(array($name,$uid));
+        $qid = $db->lastInsertId();
         
         if(!$result){
             echo "<p>Erreur de ajout<p>\n";
         }else{ 
             echo "<p>On a bien creer votre questionaire</p>";
         }
-        
-        $SQL = "SELECT MAX(qid) FROM questionnaires";
-        $result = $db->query($SQL);
-        $qid = $result->fetchColumn(0);
-        
         $url="/website/admin/modif_ques.php?qid=".$qid;
         $db = null;
         redirect($url);

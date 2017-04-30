@@ -10,6 +10,4 @@ function RandomString($length) {
     return $key;
 }
 
-echo RandomString(20);
-
 ?>

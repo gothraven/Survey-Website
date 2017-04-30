@@ -12,33 +12,33 @@ include("../db_config.php");
     
     $SQL = "SELECT * FROM champs WHERE qid=$qid ORDER BY ordre";
     $result = $db->query($SQL);
-    echo "<form method='post' id='modifques_form'>";
+    echo "<form method='post' id='questionnaire_form'>";
     foreach($result as $row){
         if(strcmp($row["type"],"Texte")==0){
             echo"<div class='form-group'>
                 <label for='text'><h3>$row[nom]</h3></label>
-                <textarea type='text' name='text' class='form-control' rows='3' id='$row[cid]' placeholder='Text...' required value=''></textarea>
+                <textarea type='text' name='$row[cid]' class='form-control' rows='3' placeholder='Text...' required value=''></textarea>
                 </div>";
         }else if(strcmp($row["type"],"Nombre")==0){
              echo"<div class='form-group'>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>
-                <input type='number' name='number' class='form-control' id='$row[cid]' placeholder='Number...' required value=''>
+                <input type='number' name='$row[cid]' class='form-control' placeholder='Number...' required value=''>
                 </div>";
         }else if(strcmp($row["type"],"Email")==0){
              echo"<div class='form-group'>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>
-                <input type='email' name='email' class='form-control' id='$row[cid]' placeholder='Email...' required value=''>
+                <input type='email' name='$row[cid]' class='form-control' placeholder='Email...' required value=''>
                 </div>";
         }else if(strcmp($row["type"],"Oui/Non")==0){
             echo"<div class='form-group'>
-                <label for='focusedInput'><h3>$row[nom]</h3></label>";
-                echo"<div class='radio'>
-                <label class='input-lg'><input type='radio' name='optradio' id='$row[cid]' value='Oui'>Oui</label>
+                    <label for='focusedInput'><h3>$row[nom]</h3></label>
+                    <div class='radio'>
+                        <label class='input-lg'><input type='radio' name='$row[cid]' value='Oui'>Oui</label>
+                    </div>
+                    <div class='radio'>
+                        <label class='input-lg'><input type='radio' name='$row[cid]' value='Non'>Non</label>
+                    </div>
                 </div>";
-                echo"<div class='radio'>
-                <label class='input-lg'><input type='radio' name='optradio' id='$row[cid]' value='Non'>Non</label>
-                </div>";
-                echo"</div>";
         }else{
             $mylist = json_decode($row["type"], true);
                 if($mylist != null){
@@ -46,13 +46,12 @@ include("../db_config.php");
                     <label for='focusedInput'><h3>$row[nom]</h3></label>";
                     foreach($mylist as &$value){  
                     echo"<div class='radio'>
-                    <label class='input-lg'><input type='radio' name='optradio' id='$row[cid]' value='$value'>$value</label>
+                    <label class='input-lg'><input type='radio' name='$row[cid]' value='$value'>$value</label>
                     </div>";
                     }
                     echo"</div>";    
                 }
-        }
-        
+        } 
     }
     echo "<input type='submit' name='sumbit' id='sumbit' value='Sumbit' class='btn btn-success' />";
     echo "</form>";

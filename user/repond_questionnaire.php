@@ -6,10 +6,9 @@
                 <h4 class="modal-title"></h4>
             </div>
             <div class="modal-body" id="questionnaire_here">
-
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-default" id="close" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

@@ -25,15 +25,18 @@ include("../header.php");
                 $result = $db->query($SQL);
                 $name = $result->fetchColumn(0);
                 ?>
-                    <button class="close pull-left" data-toggle='modal' data-target='#modifname_ques_Modal'>
-                        <h2><b><?=$name;?></b></h2>
+                    <button class="close pull-left questionnaire" data-toggle='modal' data-target='#modifname_ques_Modal'>
+                        <h2><b id="ques_name"><?=$name;?></b></h2>
                     </button>
                     <?php
     include("modifname_popup.php");
 ?>
+                       
                         <script>
-                            $(document).ready(function () {
-                                $('#modifques_form').on("submit", function (event) {
+                            $(document).ready(function() {
+                                var name = $('#ques_name').text();
+                                $('#nom_ques').val(name); 
+                                $('#modifques_form').on("submit", function(event) {
                                     event.preventDefault();
                                     if ($('#nom_ques').val() == "") {
                                         alert("Nom de questionaire ne doit pas etre vide");
@@ -42,10 +45,10 @@ include("../header.php");
                                             url: "modify_quesname.php",
                                             method: "POST",
                                             data: $('#modifques_form').serialize(),
-                                            beforeSend: function () {
+                                            beforeSend: function() {
                                                 $('#modify').val("Modifying...");
                                             },
-                                            success: function (data) {
+                                            success: function(data) {
                                                 $('#modifques_form')[0].reset();
                                                 $('#modifname_ques_Modal').modal('hide');
                                                 if (data == 'exit_success') {
@@ -59,6 +62,7 @@ include("../header.php");
                                     }
                                 });
                             });
+
                         </script>
             </div>
         </div>
@@ -164,8 +168,8 @@ include("modifc_popup.php");
 ?>
 
         <script>
-            $(document).ready(function () {
-                $('#insert_form').on("submit", function (event) {
+            $(document).ready(function() {
+                $('#insert_form').on("submit", function(event) {
                     event.preventDefault();
                     if ($('#nom_champ').val() == "") {
                         alert("Name is required");
@@ -174,10 +178,10 @@ include("modifc_popup.php");
                             url: "add_champ.php",
                             method: "POST",
                             data: $('#insert_form').serialize(),
-                            beforeSend: function () {
+                            beforeSend: function() {
                                 $('#insert').val("Inserting");
                             },
-                            success: function (data) {
+                            success: function(data) {
                                 $('#insert_form')[0].reset();
                                 $('#add_data_Modal').modal('hide');
                                 if (data == 'exit_success') {
@@ -186,19 +190,18 @@ include("modifc_popup.php");
                                     alert("Something wrong happned");
                                     location.reload();
                                 }
-
                             }
                         });
                     }
                 });
             });
 
-            $(document).ready(function () {
-                $("button.close").click(function () {
+            $(document).ready(function() {
+                $("button.close").click(function() {
                     var cid = $(this).attr('id');
                     $("[id=cid]").val(cid);
                 });
-                $('#modif_form').on("submit", function (event) {
+                $('#modif_form').on("submit", function(event) {
                     event.preventDefault();
                     if ($('#nom_champ_modif').val() == "") {
                         alert("Name is required");
@@ -207,10 +210,10 @@ include("modifc_popup.php");
                             url: "modif_champ.php",
                             method: "POST",
                             data: $('#modif_form').serialize(),
-                            beforeSend: function () {
+                            beforeSend: function() {
                                 $('#modif').val("Modifying");
                             },
-                            success: function (data) {
+                            success: function(data) {
                                 $('#modif_form')[0].reset();
                                 $('#modif_data_Modal').modal('hide');
                                 if (data == 'exit_success') {
@@ -224,6 +227,7 @@ include("modifc_popup.php");
                     }
                 });
             });
+
         </script>
 
         <?php
