@@ -48,7 +48,9 @@ echo"<div class='well'>
     </script>
     <script>
         $(document).ready(function() {
-            $('#repond-questionnaire').on('click', '#sumbit', function() {
+            $('#repond-questionnaire').on('click', '#sumbit', function(event) {
+                event.preventDefault();
+                //if (("#questionnaire_form").form.checkValidity()) {
                     $.ajax({
                         url: "user/sumbit_answers.php",
                         method: "POST",
@@ -66,7 +68,7 @@ echo"<div class='well'>
                             }
                         }
                     });
-
+                //}
             });
             $('#repond-questionnaire').on('click', '#close', function(event) {
                 $('#questionnaire_here').empty();
