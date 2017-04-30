@@ -22,7 +22,8 @@ if(!empty($_POST)){
         echo "exit_failure";
     }else{
         //echo "thank you for answering here is your referance code : '".$refCode."' you will need it for the future contacts";
-        echo "<p>thank you for answering here is your referance code : <b>".$refCode."</b> you will need it for the future contacts</p>";
+        echo "<h3><b>Thank youu</b></h3>
+                <p>here is your referance code : <b>'".$refCode."'</b> you will need it for the future contacts</p>";
     }
     
 }else{

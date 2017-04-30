@@ -49,26 +49,27 @@ echo"<div class='well'>
     <script>
         $(document).ready(function() {
             $('#repond-questionnaire').on('click', '#sumbit', function() {
-                $.ajax({
-                    url: "user/sumbit_answers.php",
-                    method: "POST",
-                    data: $('#questionnaire_form').serialize(),
-                    beforeSend: function() {
-                        $('#sumbit').val("Sumbiting...");
-                    },
-                    success: function(data) {
-                        $('#questionnaire_form')[0].reset();
-                        //$('#repond-questionnaire').modal('hide');
-                        if (data == 'exit_failure') {
-                            alert("something wrong happened");
-                        } else {
-                            $('#questionnaire_here').empty();
-                            $('#reference_code_here').html(data);
-                            //$('#repond-questionnaire').modal('show');
+                    $.ajax({
+                        url: "user/sumbit_answers.php",
+                        method: "POST",
+                        data: $('#questionnaire_form').serialize(),
+                        beforeSend: function() {
+                            $('#sumbit').val("Sumbiting...");
+                        },
+                        success: function(data) {
+                            $('#questionnaire_form')[0].reset();
+                            if (data == 'exit_failure') {
+                                alert("something wrong happened");
+                            } else {
+                                $('#questionnaire_here').empty();
+                                $('#questionnaire_here').html(data);
+                            }
                         }
-                    }
-                });
+                    });
 
+            });
+            $('#repond-questionnaire').on('click', '#close', function(event) {
+                $('#questionnaire_here').empty();
             });
         });
 
