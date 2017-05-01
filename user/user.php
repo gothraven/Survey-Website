@@ -48,11 +48,16 @@ echo"<div class='well'>
     </script>
     <script>
         $(document).ready(function() {
-            $('#repond-questionnaire').on('click', '#sumbit', function(event) {
+            /*$('#repond-questionnaire').on('click', '#sumbit', function(event) {
                 event.preventDefault();
-                if (!("#questionnaire_form").validate()) {
-                    alert("something is empty");
-                }else{
+                
+                    
+            });*/
+
+            $('#repond-questionnaire').on('click', '#sumbit', function(event) {
+                console.log(this.form.checkValidity());
+                if (this.form.checkValidity()) {
+                    event.preventDefault();
                     $.ajax({
                         url: "user/sumbit_answers.php",
                         method: "POST",

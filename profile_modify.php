@@ -49,8 +49,6 @@
                                     <div class="col-md-4">
                                         <label class="radio-inline" for="Gender-0"><input type="radio" name="Gender" id="Gender-0" value="1" checked="checked">Male</label>
                                         <label class="radio-inline" for="Gender-1"><input type="radio" name="Gender" id="Gender-1" value="2">Female</label>
-                                        <label class="radio-inline" for="Gender-2">
-                                <input type="radio" name="Gender" id="Gender-2" value="3">Other</label>
                                     </div>
                                 </div>
                                 <!-- Text input-->
@@ -98,7 +96,6 @@
                                         <textarea class="form-control" rows="10" id="Overview (max 200 words)" name="Overview (max 200 words)">Overview</textarea>
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <label class="col-md-4 control-label"></label>
                                     <div class="col-md-4">
