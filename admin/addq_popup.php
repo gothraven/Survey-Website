@@ -19,7 +19,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputText">Nom de Questionaire</label>
-                        <input type="Text" name="nom_ques" class="form-control" id="exampleInputText" placeholder="Nom de questionaire" required value="<?= $data['nom_ques']??'' ?>">
+                        <input type="Text" name="nom_ques" class="form-control" id="exampleInputText" placeholder="Nom de questionaire" required value="">
                     </div>
 
 

@@ -26,9 +26,10 @@ echo "</div>";
 ?>
 
     <script>
-        $('#confirm-delete').on('show.bs.modal', function (e) {
+        $('#confirm-delete').on('show.bs.modal', function(e) {
             $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
         });
+
     </script>
 
     <?php
@@ -42,11 +43,16 @@ echo "<div style='text-align:center'>
         include("admin/addq_popup.php");
 ?>
         <script>
-            $('#save').click(function () {
+            $('#save').click(function() {
                 $name = $("input[name='nom_ques']").val();
-                $url = 'admin/add_ques.php?name=' + $name;
-                window.open($url);
+                if ($name == "") {
+                    alert("survey name can not be empty");
+                } else {
+                    $url = 'admin/add_ques.php?name=' + $name;
+                    window.open($url);
+                }
             });
+
         </script>
         <?php
 ?>
