@@ -29,6 +29,7 @@
         .modal-body p {
             word-wrap: break-word;
         }
+
     </style>
     <?php
 if($title == "Welcome page"){
@@ -206,8 +207,15 @@ if($title == "Welcome page"){
         </style>";
     }
     ?>
+        <style>
+            @media (min-width: 768px) {
+                .modal-xl {
+                    width: 90%;
+                    max-width: 800px;
+                }
+            }
+        </style>
 </head>
-
 <body>
     <?php
 if($title == "Authentification" || $title == "Ajout de l'utilisateur"){

@@ -14,6 +14,7 @@ $pathFor = [
     "adduser" => "/website/adduser.php",
     "root"   => "/website/",
     "home" => "/website/home.php",
+    "profile"=> "/website/profile_page.php",
 ];
 
 const SKEY = '_Redirect';

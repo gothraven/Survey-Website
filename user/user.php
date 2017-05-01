@@ -50,7 +50,9 @@ echo"<div class='well'>
         $(document).ready(function() {
             $('#repond-questionnaire').on('click', '#sumbit', function(event) {
                 event.preventDefault();
-                //if (("#questionnaire_form").form.checkValidity()) {
+                if (!("#questionnaire_form").validate()) {
+                    alert("something is empty");
+                }else{
                     $.ajax({
                         url: "user/sumbit_answers.php",
                         method: "POST",
@@ -68,7 +70,7 @@ echo"<div class='well'>
                             }
                         }
                     });
-                //}
+                }
             });
             $('#repond-questionnaire').on('click', '#close', function(event) {
                 $('#questionnaire_here').empty();
