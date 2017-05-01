@@ -4,7 +4,6 @@ require("auth/EtreAuthentifie.php");
 
 $title = 'Accueil';
 include("header.php");
-//data-toggle="modal" data-target="#myModal"
 ?>
     <div class='container'>
         <center>
