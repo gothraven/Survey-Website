@@ -12,19 +12,13 @@
                     Ajouter une questionaire
                 </h4>
                 </div>
-
                 <!-- Modal Body -->
                 <div class="modal-body">
-
-
                     <div class="form-group">
                         <label for="exampleInputText">Nom de Questionaire</label>
                         <input type="Text" name="nom_ques" class="form-control" id="exampleInputText" placeholder="Nom de questionaire" required value="">
                     </div>
-
-
                 </div>
-
                 <!-- Modal Footer -->
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">
@@ -34,7 +28,6 @@
                         Save changes
                     </button>
                 </div>
-
             </div>
         </div>
     </form>

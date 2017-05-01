@@ -3,6 +3,8 @@ require("../auth/EtreAuthentifie.php");
 $title = 'Result';
 include("../header.php");
 ?>
+<link href="../css/jquery.circliful.css" rel="stylesheet" type="text/css" />
+<script src="../js/jquery.circliful.min.js"></script>
 
     <div class='container'>
         <div class='well'>
@@ -57,14 +59,16 @@ if(isset($_GET["qid"])){
     include("check_question.php");
     include("delete_answers.php");
     ?>
+       
         <script>
-            $('#delete-answers').on('show.bs.modal', function (e) {
+            $('#delete-answers').on('show.bs.modal', function(e) {
                 $(this).find('.btn-ok').attr('href', $(e.relatedTarget).data('href'));
             });
+
         </script>
         <script>
-            $(document).ready(function () {
-                $(document).on('click', 'button.pull-left', function () {
+            $(document).ready(function() {
+                $(document).on('click', 'button.pull-left', function() {
                     var id = $(this).attr("id");
                     $.ajax({
                         url: "send_answers.php",
@@ -72,17 +76,18 @@ if(isset($_GET["qid"])){
                         data: {
                             cid: id
                         },
-                        success: function (data) {
+                        success: function(data) {
                             $('#answers_here').html(data);
                             $('#check-answers').modal('show');
                         }
                     });
                 });
             });
+
         </script>
         <script>
-            $(document).ready(function () {
-                $(document).on('click', '.question', function () {
+            $(document).ready(function() {
+                $(document).on('click', '.question', function() {
                     var id = $(this).attr("id");
                     $.ajax({
                         url: "send_question.php",
@@ -90,13 +95,14 @@ if(isset($_GET["qid"])){
                         data: {
                             cid: id
                         },
-                        success: function (data) {
+                        success: function(data) {
                             $('#question_here').html(data);
                             $('#check-question').modal('show');
                         }
                     });
                 });
             });
+
         </script>
 
         <?php

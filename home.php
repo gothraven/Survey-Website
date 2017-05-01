@@ -4,11 +4,12 @@ require("auth/EtreAuthentifie.php");
 
 $title = 'Accueil';
 include("header.php");
+//data-toggle="modal" data-target="#myModal"
 ?>
     <div class='container'>
-            <center>
-                <a href="#aboutModal" data-toggle="modal" data-target="#myModal"><img src="img/default_profile.png" name="aboutme" width="140" height="140" class="img-circle"></a>
-                <?php
+        <center>
+            <a href="#aboutModal" id="profile"><img src="img/default_profile.png" name="aboutme" width="140" height="140" class="img-circle"></a>
+            <?php
                 $uid = $idm->getUid();
                 $SQL = "SELECT nom,prenom FROM users WHERE uid=$uid";
                 $result = $db->query($SQL);
@@ -21,10 +22,29 @@ include("header.php");
                 ?>
                 <br/>
                 <em>click on your face to see your informations and your score</em>
-            </center>
+        </center>
     </div>
     <br/>
 
+    <script>
+        $(document).ready(function() {
+            $(document).on('click', '#profile', function() {
+                var id = $(this).attr("id");
+                $.ajax({
+                    url: "send_profile.php",
+                    method: "POST",
+                    data: {
+                        uid: id
+                    },
+                    success: function(data) {
+                        $('#myprofile').html(data);
+                        $('#myModal').modal('show');
+                    }
+                });
+            });
+        });
+
+    </script>
     <?php
 include("profile_popup.php");
 
