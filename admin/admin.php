@@ -10,8 +10,11 @@ echo"<div class='well'>
     $result = $db->query($SQL);
     
     foreach($result as $row){
+        $SQL1 = "SELECT COUNT(cid) FROM donnees WHERE cid = (SELECT cid FROM champs WHERE qid = $row[qid] LIMIT 1)";
+        $res = $db->query($SQL1);
+        $answers_num = $res->fetchColumn(0);
         echo "<div class='list-group'>
-        <a href='admin/repond_ques.php?qid=$row[qid]' onClick=\"return confirm('Voulez allez voir la questionaire et repondre?');\" class='list-group-item' ><h5><b>$row[intitule]</b></h5></a>
+        <a href='#' class='list-group-item' ><span class='badge'>$answers_num</span><h5><b>$row[intitule]</b></h5></a>
         <button class='close' data-href='admin/supp_ques.php?qid=$row[qid]' data-toggle='modal' data-target='#confirm-delete'><i class='glyphicon glyphicon-trash'></i></button>
         <a href='admin/modif_ques.php?qid=$row[qid]' class='close' role='button'><i class='glyphicon glyphicon-cog'></i></a>
         <a href='admin/result_ques.php?qid=$row[qid]' class='close pull-left' role='button'><i class='glyphicon glyphicon-search'></i></a>";

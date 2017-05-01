@@ -15,14 +15,14 @@ if(isset($_POST["cid"])){
         
         $SQL = "SELECT `valeur` FROM `donnees` WHERE `cid`= $cid";
         $result = $db->query($SQL);
-        if($type === "Oui/Non"){
+        if($type === "Yes/No"){
             $total = 0;
             $yes = 0;
             $no = 0;
             foreach($result as $row){
-                if($row["valeur"] === "Oui"){
+                if($row["valeur"] === "Yes"){
                     $yes++;
-                }else if($row["valeur"] === "Non"){
+                }else if($row["valeur"] === "No"){
                     $no++;
                 }
                 $total++;

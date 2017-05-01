@@ -79,7 +79,7 @@ include("../header.php");
             
             $type = $row{'type'};
             
-            if(strcmp($type,"Texte")==0){
+            if(strcmp($type,"Text")==0){
                 echo"<br />
                 <div class='form-group'>
                 <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
@@ -90,7 +90,7 @@ include("../header.php");
                 <textarea class='form-control' rows='3' id='text'></textarea>
                 </div>";
                 
-            }else if(strcmp($type,"Nombre")==0){
+            }else if(strcmp($type,"Number")==0){
                 
                 echo"<br />
                 <div class='form-group'>
@@ -115,7 +115,7 @@ include("../header.php");
                 
                 </div>";
                 
-            }else if(strcmp($type,"Oui/Non")==0){
+            }else if(strcmp($type,"Yes/No")==0){
                 
                 echo"<br />
                 <div class='form-group'>
@@ -125,10 +125,10 @@ include("../header.php");
                 <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>";
                 echo"<div class='radio'>
-                <label class='input-lg'><input type='radio' name='optradio'>Oui</label>
+                <label class='input-lg'><input type='radio' name='optradio'>Yes</label>
                 </div>";
                 echo"<div class='radio'>
-                <label class='input-lg'><input type='radio' name='optradio'>Non</label>
+                <label class='input-lg'><input type='radio' name='optradio'>No</label>
                 </div>";
                 echo"</div>";
                 

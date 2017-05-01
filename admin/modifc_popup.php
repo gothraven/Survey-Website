@@ -3,7 +3,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modifer la question</h4>
+                <h4 class="modal-title">Modify The Question</h4>
             </div>
             <div class="modal-body">
                 <form method="post" id="modif_form">
@@ -13,11 +13,11 @@
                     <br />
                     <label>Select Type</label>
                     <select name="type" id="type" class="form-control">
-                        <option value="Texte">Texte</option>
-                        <option value="Nombre">Nombre</option>
-                        <option value="Oui/Non">Oui/Non</option>
+                        <option value="Text">Text</option>
+                        <option value="Number">Number</option>
+                        <option value="Yes/No">Yes/No</option>
                         <option value="Email">Email</option>
-                        <option value="Liste">Liste</option>
+                        <option value="List">List</option>
                     </select>
                     <br />
                     <input type="submit" name="modif" id="modif" value="Modify" class="btn btn-success" />

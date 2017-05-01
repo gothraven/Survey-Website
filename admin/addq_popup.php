@@ -9,13 +9,13 @@
                         <span class="sr-only">Close</span>
                     </button>
                     <h4 class="modal-title" id="myModalLabel">
-                    Ajouter une questionaire
+                    Add a Survey
                 </h4>
                 </div>
                 <!-- Modal Body -->
                 <div class="modal-body">
                     <div class="form-group">
-                        <label for="exampleInputText">Nom de Questionaire</label>
+                        <label for="exampleInputText">The Survey Name</label>
                         <input type="Text" name="nom_ques" class="form-control" id="exampleInputText" placeholder="Nom de questionaire" required value="">
                     </div>
                 </div>

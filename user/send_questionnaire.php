@@ -14,12 +14,12 @@ include("../db_config.php");
     $result = $db->query($SQL);
     echo "<form method='post' id='questionnaire_form'>";
     foreach($result as $row){
-        if(strcmp($row["type"],"Texte")==0){
+        if(strcmp($row["type"],"Text")==0){
             echo"<div class='form-group'>
                 <label for='text'><h3>$row[nom]</h3></label>
                 <textarea type='text' name='$row[cid]' class='form-control' rows='3' placeholder='Text...' required value=''></textarea>
                 </div>";
-        }else if(strcmp($row["type"],"Nombre")==0){
+        }else if(strcmp($row["type"],"Numbre")==0){
              echo"<div class='form-group'>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>
                 <input type='number' name='$row[cid]' class='form-control' placeholder='Number...' required value=''>
@@ -29,14 +29,14 @@ include("../db_config.php");
                 <label for='focusedInput'><h3>$row[nom]</h3></label>
                 <input type='email' name='$row[cid]' class='form-control' placeholder='Email...' required value=''>
                 </div>";
-        }else if(strcmp($row["type"],"Oui/Non")==0){
+        }else if(strcmp($row["type"],"Yes/No")==0){
             echo"<div class='form-group'>
                     <label for='focusedInput'><h3>$row[nom]</h3></label>
                     <div class='radio'>
-                        <label class='input-lg'><input type='radio' name='$row[cid]' value='Oui'>Oui</label>
+                        <label class='input-lg'><input type='radio' name='$row[cid]' value='Yes'>Yes</label>
                     </div>
                     <div class='radio'>
-                        <label class='input-lg'><input type='radio' name='$row[cid]' value='Non'>Non</label>
+                        <label class='input-lg'><input type='radio' name='$row[cid]' value='No'>No</label>
                     </div>
                 </div>";
         }else{

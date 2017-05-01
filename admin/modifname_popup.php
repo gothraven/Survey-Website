@@ -3,11 +3,11 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modifer le nom de questionnaire</h4>
+                <h4 class="modal-title">Modify The Survey Name</h4>
             </div>
             <div class="modal-body">
                 <form method="post" id="modifques_form">
-                    <label>Enter le nom de questionnaire</label>
+                    <label>Enter the survey name</label>
                     <input type="text" name="nom_ques" id="nom_ques" class="form-control" />
                     <input type="hidden" name="qid" value="<?=$qid;?>">
                     <br />

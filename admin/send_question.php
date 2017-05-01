@@ -17,12 +17,12 @@ if(isset($_POST["cid"])){
         $type = $row['type'];
         }    
     
-        if(strcmp($type,"Texte")==0){
+        if(strcmp($type,"Text")==0){
             echo"<div class='form-group'>
                 <label for='text'><h3>$name</h3></label>
                 <textarea class='form-control' rows='3' id='text'></textarea>
                 </div>";
-        }else if(strcmp($type,"Nombre")==0){
+        }else if(strcmp($type,"Number")==0){
              echo"<div class='form-group'>
                 <label for='focusedInput'><h3>$name</h3></label>
                 <input class='form-control' id='number' type='number'>
@@ -32,14 +32,14 @@ if(isset($_POST["cid"])){
                 <label for='focusedInput'><h3>$name</h3></label>
                 <input class='form-control' id='mail' type='mail'>
                 </div>";
-        }else if(strcmp($type,"Oui/Non")==0){
+        }else if(strcmp($type,"Yes/No")==0){
             echo"<div class='form-group'>
                 <label for='focusedInput'><h3>$name</h3></label>";
                 echo"<div class='radio'>
-                <label class='input-lg'><input type='radio' name='optradio'>Oui</label>
+                <label class='input-lg'><input type='radio' name='optradio'>Yes</label>
                 </div>";
                 echo"<div class='radio'>
-                <label class='input-lg'><input type='radio' name='optradio'>Non</label>
+                <label class='input-lg'><input type='radio' name='optradio'>No</label>
                 </div>";
                 echo"</div>";
         }else{
