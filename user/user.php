@@ -48,14 +48,8 @@ echo"<div class='well'>
     </script>
     <script>
         $(document).ready(function() {
-            /*$('#repond-questionnaire').on('click', '#sumbit', function(event) {
-                event.preventDefault();
-                
-                    
-            });*/
-
             $('#repond-questionnaire').on('click', '#sumbit', function(event) {
-                console.log(this.form.checkValidity());
+                //console.log(this.form.checkValidity());
                 if (this.form.checkValidity()) {
                     event.preventDefault();
                     $.ajax({
