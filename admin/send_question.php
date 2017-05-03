@@ -17,8 +17,13 @@ if(isset($_POST["cid"])){
         $type = $row['type'];
         }    
     
-        if(strcmp($type,"Text")==0){
+        if(strcmp($type,"lText")==0){
             echo"<div class='form-group'>
+                <label for='text'><h3>$name</h3></label>
+                <input class='form-control' id='text' type='text'>
+                </div>";
+        }else if(strcmp($type,"bText")==0){
+             echo"<div class='form-group'>
                 <label for='text'><h3>$name</h3></label>
                 <textarea class='form-control' rows='3' id='text'></textarea>
                 </div>";
@@ -31,6 +36,16 @@ if(isset($_POST["cid"])){
              echo"<div class='form-group'>
                 <label for='focusedInput'><h3>$name</h3></label>
                 <input class='form-control' id='mail' type='mail'>
+                </div>";
+        }else if(strcmp($type,"Range")==0){
+             echo"<div class='form-group'>
+                <label for='focusedInput'><h3>$name</h3></label>
+                <input type='range' name='points' min='1' max='10'>
+                </div>";
+        }else if(strcmp($type,"Date")==0){
+             echo"<div class='form-group'>
+                <label class='control-label col-sm-2 requiredField' for='date'><h3>$name</h3></label>
+                <input class='form-control' id='date' name='date' placeholder='MM/DD/YYYY' type='date'/>
                 </div>";
         }else if(strcmp($type,"Yes/No")==0){
             echo"<div class='form-group'>

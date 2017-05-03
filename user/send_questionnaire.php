@@ -14,12 +14,17 @@ include("../db_config.php");
     $result = $db->query($SQL);
     echo "<form method='post' id='questionnaire_form'>";
     foreach($result as $row){
-        if(strcmp($row["type"],"Text")==0){
+        if(strcmp($row["type"],"lText")==0){
             echo"<div class='form-group'>
                 <label for='text'><h3>$row[nom]</h3></label>
-                <textarea type='text' name='$row[cid]' class='form-control' rows='3' placeholder='Text...' required value=''></textarea>
+                <input type='text' name='$row[cid]' class='form-control' placeholder='Little Text...' required value=''>
                 </div>";
-        }else if(strcmp($row["type"],"Numbre")==0){
+        }else if(strcmp($row["type"],"bText")==0){
+            echo"<div class='form-group'>
+                <label for='text'><h3>$row[nom]</h3></label>
+                <textarea type='text' name='$row[cid]' class='form-control' rows='3' placeholder='Big Text...' required value=''></textarea>
+                </div>";
+        }else if(strcmp($row["type"],"Number")==0){
              echo"<div class='form-group'>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>
                 <input type='number' name='$row[cid]' class='form-control' placeholder='Number...' required value=''>
@@ -28,6 +33,16 @@ include("../db_config.php");
              echo"<div class='form-group'>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>
                 <input type='email' name='$row[cid]' class='form-control' placeholder='Email...' required value=''>
+                </div>";
+        }else if(strcmp($row["type"],"Range")==0){
+             echo"<div class='form-group'>
+                <label for='focusedInput'><h3>$row[nom]</h3></label>
+                <input type='range' name='$row[cid]' min='1' max='10'>
+                </div>";
+        }else if(strcmp($row["type"],"Date")==0){
+             echo"<div class='form-group'>
+                <label class='control-label col-sm-2 requiredField' for='date'><h3>$row[nom]</h3></label>
+                <input class='form-control' id='date' name='$row[cid]' placeholder='MM/DD/YYYY' type='date'/>
                 </div>";
         }else if(strcmp($row["type"],"Yes/No")==0){
             echo"<div class='form-group'>

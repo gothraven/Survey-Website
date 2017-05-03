@@ -10,7 +10,9 @@ This website is a survey platform.
 ### How do I get set up? ###
 
 * Change the db_config.php to your data-base informations
-* Import the data-base file db_project.sql to your dada_base
+* Make sur you don't have another data-base that looks like ours
+* Import the data-base file db/db_project.sql to your dada_base
+* Import the data-base file db/db_project_data_filling.sql to your dada_base
 * Make sure you are using the lastest version of PHP
 * use : admin & admin for admin loging test
 * use : test & test for user login test
@@ -24,3 +26,4 @@ This website is a survey platform.
 ### Who do I talk to? ###
 
 * for the moment i must stay annonymous for some security reasons
+* if there is any problems report that to the teacher 

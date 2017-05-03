@@ -15,7 +15,9 @@ if(!empty($_POST)){
     $SQL = "INSERT INTO `donnees` (`sid`, `cid`, `valeur`) VALUES (?,?,?)";
     $set = $db->prepare($SQL);
     foreach ($_POST as $key => $value) {
-       $result = $set->execute(array($sid,$key,$value));
+        if($value != ""){
+            $result = $set->execute(array($sid,$key,$value));
+        }
 	}
     
     if(!$result){

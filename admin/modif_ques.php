@@ -79,7 +79,20 @@ include("../header.php");
             
             $type = $row{'type'};
             
-            if(strcmp($type,"Text")==0){
+            if(strcmp($type,"lText")==0){
+               
+                echo"<br />
+                <div class='form-group'>
+                <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
+                <button class='close' id='$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
+                <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
+                <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
+                <label for='text'><h3>$row[nom]</h3></label>
+                <input class='form-control' id='text' type='text'>
+                </div>";
+                
+            }else if(strcmp($type,"bText")==0){
+               
                 echo"<br />
                 <div class='form-group'>
                 <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
@@ -94,14 +107,14 @@ include("../header.php");
                 
                 echo"<br />
                 <div class='form-group'>
-               <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
+                <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
                 <button class='close' id='$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
                 <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
                 <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>
                 <input class='form-control' id='number' type='number'>
                 </div>";
-                
+            
             }else if(strcmp($type,"Email")==0){
                 
                 echo"<br />
@@ -112,6 +125,32 @@ include("../header.php");
                 <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
                 <label for='focusedInput'><h3>$row[nom]</h3></label>
                 <input class='form-control' id='email' type='email'>
+                
+                </div>";
+                
+            }else if(strcmp($type,"Range")==0){
+                
+                echo"<br />
+                <div class='form-group'>
+                <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
+                <button class='close' id='$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
+                <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
+                <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
+                <label for='focusedInput'><h3>$row[nom]</h3></label>
+                <input type='range' name='points' min='0' max='10'>
+                
+                </div>";
+                
+            }else if(strcmp($type,"Date")==0){
+                
+                echo"<br />
+                <div class='form-group'>
+                <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
+                <button class='close' id='$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
+                <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
+                <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
+                <label class='control-label col-sm-2 requiredField' for='date'><h3>$row[nom]</h3></label>
+                <input class='form-control' id='date' name='date' placeholder='MM/DD/YYYY' type='date'/>
                 
                 </div>";
                 

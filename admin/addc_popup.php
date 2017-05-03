@@ -13,10 +13,13 @@
                     <br />
                     <label>Select Type</label>
                     <select name="type" id="type" class="form-control">
-                        <option value="Text">Text</option>
+                        <option value="lText">Little Text</option>
+                        <option value="bText">Big Text</option>
                         <option value="Number">Number</option>
                         <option value="Yes/No">Yes/No</option>
                         <option value="Email">Email</option>
+                        <option value="Range">Range 1-10</option>
+                        <option value="Date">Date</option>
                         <option value="List">List</option>
                     </select>
                     <br />
