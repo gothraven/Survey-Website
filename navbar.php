@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="<?= $pathFor['home'] ?>"">AskMe</a>
+            <a class="navbar-brand" href="<?= $pathFor['home'] ?>">AskMe</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
@@ -28,7 +28,7 @@
         if($idm->getRole() == "admin"){
         echo"<form class='navbar-form navbar-right' role='search'>
             <div class='input-group'>
-                <input type='text' class='form-control' placeholder='Search' name='srch-term' id='srch-term'>
+                <input type='text' class='form-control' placeholder='Reference Code' name='srch-term' id='srch-term'>
                 <div class='input-group-btn'>
                     <button class='btn btn-default' type='submit'>
                         <i class='glyphicon glyphicon-search'></i>

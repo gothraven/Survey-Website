@@ -27,8 +27,13 @@ if(isset($_POST["cid"])){
                 }
                 $total++;
             }
-            $yes_percent = ( $yes * 100 ) / $total;
-            $no_percent = ( $no * 100 ) / $total;
+            if($total != 0){
+                $yes_percent = ( $yes * 100 ) / $total;
+                $no_percent = ( $no * 100 ) / $total;
+            }else{
+                $yes_percent = $yes;
+                $no_percent = $no;
+            }
             echo"<div class='row'>
                 <div class='col-xs-2'>
                 </div>
@@ -42,7 +47,7 @@ if(isset($_POST["cid"])){
                 </div>
             </div>
             <script>
-            $('.modal-body #yes-circle').circliful({
+            $('#yes-circle').circliful({
                 animation: 1,
                 animationStep: 6,
                 foregroundBorderWidth: 5,
@@ -54,7 +59,7 @@ if(isset($_POST["cid"])){
                 text: 'Yes',
                 textBelow: true
             });
-            $('.modal-body #no-circle').circliful({
+            $('#no-circle').circliful({
                 animation: 1,
                 animationStep: 6,
                 foregroundBorderWidth: 5,
@@ -105,74 +110,72 @@ if(isset($_POST["cid"])){
                     $_10++;
                 }
                 $total++;
-            }       
-        $_10per = ( $_10 * 100 ) / $total;
-        $_9per = ( $_9 * 100 ) / $total;
-        $_8per = ( $_8 * 100 ) / $total;
-        $_7per = ( $_7 * 100 ) / $total;
-        $_6per = ( $_6 * 100 ) / $total;
-        $_5per = ( $_5 * 100 ) / $total;
-        $_4per = ( $_4 * 100 ) / $total;
-        $_3per = ( $_3 * 100 ) / $total;
-        $_2per = ( $_2 * 100 ) / $total;
-        $_1per = ( $_1 * 100 ) / $total;
-        /*    
-        echo"<div>
-          <ul data-pie-id='svg'>
-            <li data-value='$_10per'>10 ($_10per%)</li>
-            <li data-value='$_9per'>9 ($_9per%)</li>
-            <li data-value='$_8per'>8 ($_8per%)</li>
-            <li data-value='$_7per'>7 ($_7per%)</li>
-            <li data-value='$_6per'>6 ($_6per%)</li>
-            <li data-value='$_5per'>4 ($_5per%)</li>
-            <li data-value='$_4per'>3 ($_4per%)</li>
-            <li data-value='$_3per'>2 ($_3per%)</li>
-            <li data-value='$_2per'>1 ($_2per%)</li>
-            <li data-value='$_1per'>0 ($_1per%)</li>    
-          </ul>
-        </div>";*/
+            }
+            if($total != 0){
+                $_10per = ( $_10 * 100 ) / $total;
+                $_9per = ( $_9 * 100 ) / $total;
+                $_8per = ( $_8 * 100 ) / $total;
+                $_7per = ( $_7 * 100 ) / $total;
+                $_6per = ( $_6 * 100 ) / $total;
+                $_5per = ( $_5 * 100 ) / $total;
+                $_4per = ( $_4 * 100 ) / $total;
+                $_3per = ( $_3 * 100 ) / $total;
+                $_2per = ( $_2 * 100 ) / $total;
+                $_1per = ( $_1 * 100 ) / $total;
+            }else{
+                $_10per = $_10;
+                $_9per =  $_9;
+                $_8per =  $_8;
+                $_7per =  $_7;
+                $_6per =  $_6;
+                $_5per =  $_5;
+                $_4per =  $_4;
+                $_3per =  $_3;
+                $_2per =  $_2;
+                $_1per =  $_1;
+            }
         echo"<div class='row'>
         <div class='col-xs-3'>
-            <div id='1' data-percent='$_1per'></div>
+            <div id='1per' data-percent='$_1per'></div>
         </div>
         <div class='col-xs-3'>
-            <div id='2' data-percent='$_2per'></div>
+            <div id='2per' data-percent='$_2per'></div>
         </div>
         <div class='col-xs-3'>
-            <div id='3' data-percent='$_3per'></div>
+            <div id='3per' data-percent='$_3per'></div>
         </div>
         <div class='col-xs-3'>
-            <div id='4' data-percent='$_4per'></div>
+            <div id='4per' data-percent='$_4per'></div>
         </div>
     </div>
     <div class='row'>
          <div class='col-xs-3'>
-            <div id='5' data-percent='$_5per'></div>
+            <div id='5per' data-percent='$_5per'></div>
         </div>
         <div class='col-xs-3'>
-            <div id='6' data-percent='$_6per'></div>
+            <div id='6per' data-percent='$_6per'></div>
         </div>
         <div class='col-xs-3'>
-            <div id='7' data-percent='$_7per'></div>
+            <div id='7per' data-percent='$_7per'></div>
         </div>
         <div class='col-xs-3'>
-            <div id='8' data-percent='$_8per'></div>
+            <div id='8per' data-percent='$_8per'></div>
         </div>
     </div>
     <div class='row'>
          <div class='col-xs-3'>
         </div>
         <div class='col-xs-3'>
-            <div id='9' data-percent='$_9per'></div>
+            <div id='9per' data-percent='$_9per'></div>
         </div>
         <div class='col-xs-3'>
-            <div id='10' data-percent='$_10per'></div>
+            <div id='10per' data-percent='$_10per'></div>
         </div>
         <div class='col-xs-3'>
         </div>
     </div>";
         echo"<script>
-            $('.modal-body #1').circliful({
+            $('#1per').circliful({
                 animation: 1,
                 animationStep: 6,
                 foregroundBorderWidth: 5,
@@ -184,7 +187,7 @@ if(isset($_POST["cid"])){
                 text: '1',
                 textBelow: true
             });
-            $('.modal-body #2').circliful({
+            $('#2per').circliful({
                 animation: 1,
                 animationStep: 6,
                 foregroundBorderWidth: 5,
@@ -196,7 +199,7 @@ if(isset($_POST["cid"])){
                 text: '2',
                 textBelow: true
             });
-            $('.modal-body #3').circliful({
+            $('#3per').circliful({
                 animation: 1,
                 animationStep: 6,
                 foregroundBorderWidth: 5,
@@ -208,7 +211,7 @@ if(isset($_POST["cid"])){
                 text: '3',
                 textBelow: true
             });
-            $('.modal-body #4').circliful({
+            $('#4per').circliful({
                 animation: 1,
                 animationStep: 6,
                 foregroundBorderWidth: 5,
@@ -220,7 +223,7 @@ if(isset($_POST["cid"])){
                 text: '4',
                 textBelow: true
             });
-            $('.modal-body #5').circliful({
+            $('#5per').circliful({
                 animation: 1,
                 animationStep: 6,
                 foregroundBorderWidth: 5,
@@ -232,7 +235,7 @@ if(isset($_POST["cid"])){
                 text: '5',
                 textBelow: true
             });
-            $('.modal-body #6').circliful({
+            $('#6per').circliful({
                 animation: 1,
                 animationStep: 6,
                 foregroundBorderWidth: 5,
@@ -244,7 +247,7 @@ if(isset($_POST["cid"])){
                 text: '6',
                 textBelow: true
             });
-            $('.modal-body #7').circliful({
+            $('#7per').circliful({
                 animation: 1,
                 animationStep: 6,
                 foregroundBorderWidth: 5,
@@ -256,7 +259,7 @@ if(isset($_POST["cid"])){
                 text: '7',
                 textBelow: true
             });
-            $('.modal-body #8').circliful({
+            $('#8per').circliful({
                 animation: 1,
                 animationStep: 6,
                 foregroundBorderWidth: 5,
@@ -268,7 +271,7 @@ if(isset($_POST["cid"])){
                 text: '8',
                 textBelow: true
             });
-            $('.modal-body #9').circliful({
+            $('#9per').circliful({
                 animation: 1,
                 animationStep: 6,
                 foregroundBorderWidth: 5,
@@ -280,7 +283,7 @@ if(isset($_POST["cid"])){
                 text: '9',
                 textBelow: true
             });
-            $('.modal-body #10').circliful({
+            $('#10per').circliful({
                 animation: 1,
                 animationStep: 6,
                 foregroundBorderWidth: 5,

@@ -41,7 +41,7 @@ include("../db_config.php");
                 </div>";
         }else if(strcmp($row["type"],"Date")==0){
              echo"<div class='form-group'>
-                <label class='control-label col-sm-2 requiredField' for='date'><h3>$row[nom]</h3></label>
+                <label class='control-label requiredField' for='date'><h3>$row[nom]</h3></label>
                 <input class='form-control' id='date' name='$row[cid]' placeholder='MM/DD/YYYY' type='date'/>
                 </div>";
         }else if(strcmp($row["type"],"Yes/No")==0){

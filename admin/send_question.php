@@ -44,7 +44,7 @@ if(isset($_POST["cid"])){
                 </div>";
         }else if(strcmp($type,"Date")==0){
              echo"<div class='form-group'>
-                <label class='control-label col-sm-2 requiredField' for='date'><h3>$name</h3></label>
+                <label class='control-label requiredField' for='date'><h3>$name</h3></label>
                 <input class='form-control' id='date' name='date' placeholder='MM/DD/YYYY' type='date'/>
                 </div>";
         }else if(strcmp($type,"Yes/No")==0){

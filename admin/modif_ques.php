@@ -149,7 +149,7 @@ include("../header.php");
                 <button class='close' id='$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
                 <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
                 <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
-                <label class='control-label col-sm-2 requiredField' for='date'><h3>$row[nom]</h3></label>
+                <label class='control-label requiredField' for='date'><h3>$row[nom]</h3></label>
                 <input class='form-control' id='date' name='date' placeholder='MM/DD/YYYY' type='date'/>
                 
                 </div>";

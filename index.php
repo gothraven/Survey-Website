@@ -1,4 +1,5 @@
 <?php 
+
 $title = 'Welcome page';
 include("header.php");
 ?>

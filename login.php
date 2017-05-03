@@ -50,7 +50,7 @@ if (isset($_SESSION[SKEY])) {
     redirect($uri);
     exit();
 }
-redirect($pathFor['root']);
+redirect($pathFor['home']);
 
 
 

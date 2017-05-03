@@ -82,6 +82,9 @@ if(isset($_GET["qid"])){
                         }
                     });
                 });
+                $(document).on('click','#close-answers',function(){
+                    $('#answers_here').empty();
+                });
             });
 
         </script>
