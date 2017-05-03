@@ -22,7 +22,7 @@ if(isset($_GET["name"])){
         }else{ 
             echo "<p>On a bien creer votre questionaire</p>";
         }
-        $url="/website/admin/modif_ques.php?qid=".$qid;
+        $url="/Ask-Me/admin/modif_ques.php?qid=".$qid;
         $db = null;
         redirect($url);
         
