@@ -15,7 +15,7 @@ echo"<div class='well'>
                 </p>";   
     }
     foreach($res as $row){
-        echo"<button class='list-group-item questionnaire' id='$row[qid]'><h4><b>$row[intitule]</b></h4></button>";
+        echo"<button class='list-group-item questionnaire glow' id='$row[qid]'><h4><b>$row[intitule]</b></h4></button>";
     }
     echo "</div>";
     echo "</div>";

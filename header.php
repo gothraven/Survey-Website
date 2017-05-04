@@ -214,8 +214,62 @@ if($title == "Welcome page"){
                     max-width: 800px;
                 }
             }
+            
+            .glowg {
+                display: inline-block;
+                animation: glowg 0.3s 7 alternate;
+            }
+            
+            @keyframes glowg {
+                to {
+                    color: gold;
+                    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+                    transform: scale(1.2);
+                }
+            }
+            
+            .glowr {
+                display: inline-block;
+                animation: glowr 0.3s 7 alternate;
+            }
+            
+            @keyframes glowr {
+                to {
+                    color: red;
+                    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+                    transform: scale(1.2);
+                }
+            }
+            
+            .glowb {
+                display: inline-block;
+                animation: glowb 0.3s 7 alternate;
+            }
+            
+            @keyframes glowb {
+                to {
+                    color: blue;
+                    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+                    transform: scale(1.2);
+                }
+            }
+            
+            .glowgr {
+                display: inline-block;
+                animation: glowgr 0.3s 7 alternate;
+            }
+            
+            @keyframes glowgr {
+                to {
+                    color: grey;
+                    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+                    transform: scale(1.2);
+                }
+            }
+
         </style>
 </head>
+
 <body>
     <?php
 if($title == "Authentification" || $title == "Ajout de l'utilisateur"){

@@ -20,9 +20,9 @@ echo"<div class='well'>
         $answers_num = $res->fetchColumn(0);
         echo "<div class='list-group'>
         <a href='#' class='list-group-item' ><span class='badge'>$answers_num</span><h5><b>$row[intitule]</b></h5></a>
-        <button class='close' data-href='admin/supp_ques.php?qid=$row[qid]' data-toggle='modal' data-target='#confirm-delete'><i class='glyphicon glyphicon-trash'></i></button>
-        <a href='admin/modif_ques.php?qid=$row[qid]' class='close' role='button'><i class='glyphicon glyphicon-cog'></i></a>
-        <a href='admin/result_ques.php?qid=$row[qid]' class='close pull-left' role='button'><i class='glyphicon glyphicon-search'></i></a>";
+        <button class='close' data-href='admin/supp_ques.php?qid=$row[qid]' data-toggle='modal' data-target='#confirm-delete'><i class='glyphicon glyphicon-trash glowr'></i></button>
+        <a href='admin/modif_ques.php?qid=$row[qid]' class='close' role='button'><i class='glyphicon glyphicon-cog glowg'></i></a>
+        <a href='admin/result_ques.php?qid=$row[qid]' class='close pull-left' role='button'><i class='glyphicon glyphicon-search glowb'></i></a>";
         echo "</div>
         <br />";
     }
@@ -44,7 +44,7 @@ echo "</div>";
 
 echo "</div>";
 echo "<div style='text-align:center'>
-        <button class='btn btn-primary' data-toggle='modal' data-target='#add_questionaire'>
+        <button class='btn btn-primary glowg' data-toggle='modal' data-target='#add_questionaire'>
             <i class='glyphicon glyphicon-plus'></i>
         </button>
 </div>";

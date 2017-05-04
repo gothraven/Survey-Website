@@ -45,8 +45,8 @@ if(isset($_GET["qid"])){
                 foreach($result as $row){
                 echo"<div class='list-group'>
                         <button class='list-group-item question' id='$row[cid]'><h5><b>$row[nom]</b></h5></button>
-                        <button class='close pull-left' id='$row[cid]'><i class='glyphicon glyphicon-eye-open'></i></button>
-                        <button class='close' data-href='supp_answers.php?cid=$row[cid]' data-toggle='modal' data-target='#delete-answers'><i class='glyphicon glyphicon-trash'></i></button>
+                        <button class='close pull-left' id='$row[cid]'><i class='glyphicon glyphicon-eye-open glowb'></i></button>
+                        <button class='close' data-href='supp_answers.php?cid=$row[cid]' data-toggle='modal' data-target='#delete-answers'><i class='glyphicon glyphicon-trash glowr'></i></button>
                     </div>
                     <br/>";
                 }
