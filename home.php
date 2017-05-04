@@ -6,7 +6,7 @@ $title = 'Accueil';
 include("header.php");
 ?>
     <div class='container'>
-        <center>
+        <center class="jumbotron">
             <a href="#aboutModal" id="profile"><img src="img/default_profile.png" name="aboutme" width="140" height="140" class="img-circle"></a>
             <?php
                 $uid = $idm->getUid();
@@ -16,7 +16,7 @@ include("header.php");
                 $lname = $row["nom"];
                 $fname = $row["prenom"];
                 
-            echo"<h3>".$lname." ".$fname."</h3>
+            echo"<h1>".$lname." ".$fname."</h1>
                 <em><b>".$idm->getRole()."</b></em>";
                 ?>
                 <br/>
@@ -49,12 +49,41 @@ include("profile/profile_popup.php");
 
 if($idm->getRole() == "user"){
     
-    include("user/user.php");   
-    
+    include("user/user.php"); 
+       
 }else if($idm->getRole() == "admin"){
-   
-    include("admin/admin.php");
-   
+    include("admin/search_modal.php");
+    include("admin/admin.php"); 
+    ?>
+        <script>
+            $('#search-form').on('click', '#search', function(event) {
+                event.preventDefault();
+                if ($("#srch-term").val() == "") {
+                    alert("its empty");
+                } else {
+                    var ref = $("#srch-term").val();
+                    $.ajax({
+                        url: "admin/search_answers.php",
+                        method: "POST",
+                        data: {
+                            reference : ref
+                        },
+                        success: function(data) {
+                            $('#search-form')[0].reset();
+                            if (data == 'exit_failure') {
+                                alert("something wrong happened");
+                                location.reload();
+                            } else {
+                                $('#answers_here').html(data);
+                                $('#search_Modal').modal('show');
+                            }
+                        }
+                    });
+                }
+
+            });
+        </script>
+ <?php
 }
  ?>
 

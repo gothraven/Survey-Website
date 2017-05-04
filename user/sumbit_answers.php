@@ -1,7 +1,7 @@
 <?php 
 require("../auth/EtreAuthentifie.php");
 include("../db_config.php");
-include("../refCode.php");
+include("refCode.php");
 
 $refCode = RandomString(20);
 

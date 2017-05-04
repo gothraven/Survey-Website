@@ -9,14 +9,16 @@ This website is a survey platform.
 
 ### How do I get set up? ###
 
-* We recommande using wampserver and google chrome 
-* Make sur you the website file is Ask-Me and its on the www/ directectory 
+* We recommande using wampserver and google chrome because we have seen some problems with users using MAMP or XAMP
+* Make sur you the website file is Ask-Me and its on the www/ directectory (http://localhost/Ask-Me/) otherwise you will have problems
 * Make sur you don't have another data-base that looks like ours
-* Import the data-base file db/2017_project2_questionnaires.sql to your dada_base
+* Import the data-base file db/db_projet_empty.sql to your dada_base incase you want start from scratch
+* Import the data-base file db/db_projet_filled.sql to your dada_base incase you want have survies already done and answered
 * Change the db_config.php to your data-base informations and "projet_db" for the data-base name
 * Make sure you are using the lastest version of PHP
 * use : admin & admin for admin loging test
 * use : test & test for user login test
+* check the folder manual/ for more informations about how you can use our website
 
 ### Contribution guidelines ###
 
