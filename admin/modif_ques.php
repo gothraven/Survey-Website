@@ -31,11 +31,11 @@ include("../header.php");
                     <?php
     include("modifname_popup.php");
 ?>
-                       
+
                         <script>
                             $(document).ready(function() {
                                 var name = $('#ques_name').text();
-                                $('#nom_ques').val(name); 
+                                $('#nom_ques').val(name);
                                 $('#modifques_form').on("submit", function(event) {
                                     event.preventDefault();
                                     if ($('#nom_ques').val() == "") {
@@ -176,8 +176,8 @@ include("../header.php");
                 if($mylist != null){
                     echo"<br />
                     <div class='form-group'>
-                    <a href='supp_champ.php?$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
-                    <button class='close' id='cid=$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
+                    <a href='supp_champ.php?cid=$row[cid]' class ='close' onClick=\"return confirm('Vous étes sure?');\"><i class='fa fa-trash'></i></a>
+                    <button class='close' id='$row[cid]' data-toggle='modal' data-target='#modif_data_Modal'><i class='glyphicon glyphicon-cog'></i></button>
                     <a href='mvup_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-up'></i></a>
                     <a href='mvdown_champ.php?cid=$row[cid]' class ='close'><i class='glyphicon glyphicon-chevron-down'></i></a>
                     <label for='focusedInput'><h3>$row[nom]</h3></label>";
@@ -208,11 +208,22 @@ include("modifc_popup.php");
 
         <script>
             $(document).ready(function() {
+                $("#type").click(function() {
+                    if ($('#type').val() == "List") {
+                        $("#list").attr("type","text");
+                    }else{
+                        $("#list").attr("type","hidden");
+                        $("#list").val("");
+                    }
+                });
+
                 $('#insert_form').on("submit", function(event) {
                     event.preventDefault();
                     if ($('#nom_champ').val() == "") {
                         alert("Name is required");
-                    } else {
+                    } else if($('#type').val() == "List" && $("#list").val() == ""){
+                        alert("list shouldn't be empty");      
+                    }else{
                         $.ajax({
                             url: "add_champ.php",
                             method: "POST",
@@ -240,10 +251,20 @@ include("modifc_popup.php");
                     var cid = $(this).attr('id');
                     $("[id=cid]").val(cid);
                 });
+                $("#type-modif").click(function() {
+                    if ($('#type-modif').val() == "List") {
+                        $("#list-modif").attr("type","text");
+                    }else{
+                        $("#list-modif").attr("type","hidden");
+                        $("#list-modif").val("");
+                    }
+                });
                 $('#modif_form').on("submit", function(event) {
                     event.preventDefault();
                     if ($('#nom_champ_modif').val() == "") {
                         alert("Name is required");
+                    } else if($('#type-modif').val() == "List" && $("#list-modif").val() == ""){
+                        alert("list shouldn't be empty");      
                     } else {
                         $.ajax({
                             url: "modif_champ.php",

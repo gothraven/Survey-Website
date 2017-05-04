@@ -1,5 +1,5 @@
 <?php
-require("auth/EtreAuthentifie.php");
+require("../auth/EtreAuthentifie.php");
 
 $uid = $idm->getUid();
 $SQL = "SELECT nom,prenom FROM users WHERE uid=$uid";

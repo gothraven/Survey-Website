@@ -30,7 +30,7 @@ include("header.php");
             $(document).on('click', '#profile', function() {
                 var id = $(this).attr("id");
                 $.ajax({
-                    url: "send_profile.php",
+                    url: "profile/send_profile.php",
                     method: "POST",
                     data: {
                         uid: id
@@ -45,7 +45,7 @@ include("header.php");
 
     </script>
     <?php
-include("profile_popup.php");
+include("profile/profile_popup.php");
 
 if($idm->getRole() == "user"){
     

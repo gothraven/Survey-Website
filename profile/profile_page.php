@@ -1,12 +1,12 @@
 <?php
-require("auth/EtreAuthentifie.php");
+require("../auth/EtreAuthentifie.php");
 $title = "Profile page";
-include("header.php");
+include("../header.php");
 
 ?>
         <div class='container'>
             <center>
-                <a href="#aboutModal" data-toggle="modal" data-target="#profile_modify"><img src="img/default_profile.png" name="aboutme" width="140" height="140" class="img-circle"></a>
+                <a href="#aboutModal" data-toggle="modal" data-target="#profile_modify"><img src="../img/default_profile.png" name="aboutme" width="140" height="140" class="img-circle"></a>
                  <?php
                 $uid = $idm->getUid();
                 $SQL = "SELECT nom,prenom FROM users WHERE uid=$uid";
@@ -24,5 +24,5 @@ include("header.php");
         </div>
     <?php
 include("profile_modify.php");
-include("footer.php");
+include("../footer.php");
 ?>

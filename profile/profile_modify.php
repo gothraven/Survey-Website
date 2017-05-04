@@ -106,7 +106,7 @@
                             </form>
                         </div>
                         <div class="col-md-2 hidden-xs">
-                            <img src="img/default_profile.png" class="img-circle img-thumbnail ">
+                            <img src="../img/default_profile.png" class="img-circle img-thumbnail ">
                         </div>
                     </div>
                 </div>

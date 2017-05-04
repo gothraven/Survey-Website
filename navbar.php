@@ -14,7 +14,7 @@
             <?php
             if($title == "Profile page"){
                 echo"<li><a href='$pathFor[home]'>Home</a></li>
-                <li class='active'><a href='$pathFor[profile].php'>Profile</a></li>";
+                <li class='active'><a href='$pathFor[profile]'>Profile</a></li>";
             }else{
                 echo"<li class='active'><a href='$pathFor[home]'>Home</a></li>
                 <li><a href='$pathFor[profile]'>Profile</a></li>";    

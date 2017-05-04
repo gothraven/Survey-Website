@@ -8,7 +8,7 @@
             <div class="modal-body">
                 <form method="post" id="insert_form">
                     <label>Enter Question</label>
-                    <input type="text" name="nom_champ" id="nom_champ" class="form-control" />
+                    <input type="text" name="nom_champ" id="nom_champ" placeholder="ex: How are you?" class="form-control" />
                     <input type="hidden" name="qid" value="<?=$qid;?>">
                     <br />
                     <label>Select Type</label>
@@ -23,8 +23,9 @@
                         <option value="List">List</option>
                     </select>
                     <br />
+                    <input type="hidden" id="list" class="form-control" name="list" placeholder="ex: food,movies,games" value="">
+                    <br />
                     <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-success" />
-
                 </form>
             </div>
             <div class="modal-footer">
