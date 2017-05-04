@@ -8,6 +8,12 @@ echo"<div class='well'>
     
     $SQL = "SELECT qid,intitule FROM questionnaires";
     $res = $db->query($SQL);
+    $number_of_rows = $res->rowCount();
+    if(!$number_of_rows){
+        echo "<p class='close pull-left'>
+                    There is no survies to answer yet ...
+                </p>";   
+    }
     foreach($res as $row){
         echo"<button class='list-group-item questionnaire' id='$row[qid]'><h4><b>$row[intitule]</b></h4></button>";
     }

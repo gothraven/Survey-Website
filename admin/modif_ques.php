@@ -74,7 +74,12 @@ include("../header.php");
                     <?php
         $SQL = "SELECT * FROM champs WHERE qid = $qid ORDER BY ordre";
         $result = $db->query($SQL);
-            
+        $number_of_rows = $result->rowCount();
+        if(!$number_of_rows){
+            echo "<p class='close pull-left'>
+                    Your questions will be here ...
+                </p>";   
+        }
         foreach($result as $row){
             
             $type = $row{'type'};

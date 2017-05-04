@@ -71,7 +71,7 @@ if($idm->getRole() == "user"){
                         success: function(data) {
                             $('#search-form')[0].reset();
                             if (data == 'exit_failure') {
-                                alert("something wrong happened");
+                                alert("you've written a wrong reference code, or it doesn't exist anymore");
                                 location.reload();
                             } else {
                                 $('#answers_here').html(data);

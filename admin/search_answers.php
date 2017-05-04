@@ -12,7 +12,8 @@ if(isset($_POST["reference"])){
         $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         $SQL = "SELECT `sid` FROM `saisie` WHERE `reference` LIKE '$reference'";
         $result = $db->query($SQL);
-        if(!$result){
+        $number_of_rows = $result->rowCount();
+        if(!$number_of_rows){
             echo "exit_failure";   
         }else{
             $sid = $result->fetchColumn(0);

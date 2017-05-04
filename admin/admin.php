@@ -8,7 +8,12 @@ echo"<div class='well'>
     $uid = $idm->getUid();
     $SQL = "SELECT qid,intitule FROM questionnaires WHERE uid=$uid";
     $result = $db->query($SQL);
-    
+    $number_of_rows = $result->rowCount();
+    if(!$number_of_rows){
+        echo "<p class='close pull-left'>
+                    Your survies will be here ...
+                </p>";   
+    }
     foreach($result as $row){
         $SQL1 = "SELECT COUNT(cid) FROM donnees WHERE cid = (SELECT cid FROM champs WHERE qid = $row[qid] LIMIT 1)";
         $res = $db->query($SQL1);
