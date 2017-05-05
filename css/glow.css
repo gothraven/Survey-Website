@@ -1,0 +1,102 @@
+ @media (min-width: 768px) {
+     .modal-xl {
+         width: 90%;
+         max-width: 800px;
+     }
+ }
+ 
+ .glowg {
+     display: inline-block;
+     -webkit-animation: glowg 0.3s 7 alternate;
+     animation: glowg 0.3s 7 alternate;
+ }
+ 
+ @-webkit-keyframes glowg {
+     to {
+         color: gold;
+         text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+         -webkit-transform: scale(1.2);
+         transform: scale(1.2);
+     }
+ }
+ 
+ @keyframes glowg {
+     to {
+         color: gold;
+         text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+         -webkit-transform: scale(1.2);
+         transform: scale(1.2);
+     }
+ }
+ 
+ .glowr {
+     display: inline-block;
+     -webkit-animation: glowr 0.3s 7 alternate;
+     animation: glowr 0.3s 7 alternate;
+ }
+ 
+ @-webkit-keyframes glowr {
+     to {
+         color: red;
+         text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+         -webkit-transform: scale(1.2);
+         transform: scale(1.2);
+     }
+ }
+ 
+ @keyframes glowr {
+     to {
+         color: red;
+         text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+         -webkit-transform: scale(1.2);
+         transform: scale(1.2);
+     }
+ }
+ 
+ .glowb {
+     display: inline-block;
+     -webkit-animation: glowb 0.3s 7 alternate;
+     animation: glowb 0.3s 7 alternate;
+ }
+ 
+ @-webkit-keyframes glowb {
+     to {
+         color: blue;
+         text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+         -webkit-transform: scale(1.2);
+         transform: scale(1.2);
+     }
+ }
+ 
+ @keyframes glowb {
+     to {
+         color: blue;
+         text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+         -webkit-transform: scale(1.2);
+         transform: scale(1.2);
+     }
+ }
+ 
+ .glowgr {
+     display: inline-block;
+     -webkit-animation: glowgr 0.3s 7 alternate;
+     animation: glowgr 0.3s 7 alternate;
+ }
+ 
+ @-webkit-keyframes glowgr {
+     to {
+         color: grey;
+         text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+         -webkit-transform: scale(1.2);
+         transform: scale(1.2);
+     }
+ }
+ 
+ @keyframes glowgr {
+     to {
+         color: grey;
+         text-shadow: 0 2px 3px rgba(0, 0, 0, 0.6);
+         -webkit-transform: scale(1.2);
+         transform: scale(1.2);
+     }
+ }
