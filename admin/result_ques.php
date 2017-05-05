@@ -5,6 +5,7 @@ include("../header.php");
 ?>
 <link href="../css/jquery.circliful.css" rel="stylesheet" type="text/css" />
 <script src="../js/jquery.circliful.min.js"></script>
+<link rel="stylesheet" href="../css/glow.min.css">
 
     <div class='container'>
         <div class='well'>

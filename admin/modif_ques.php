@@ -5,6 +5,7 @@ require("../auth/EtreAuthentifie.php");
 $title = 'Modifer';
 include("../header.php");
 ?>
+   <link rel="stylesheet" href="../css/glow.min.css">
     <div class="container">
         <div class="well">
             <div class="container">

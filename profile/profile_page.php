@@ -4,6 +4,7 @@ $title = "Profile page";
 include("../header.php");
 
 ?>
+   <link rel="stylesheet" href="../css/glow.min.css">
     <div class='container'>
         <center class="jumbotron">
             <a href="#aboutModal" class="glowg" data-toggle="modal" data-target="#profile_modify"><img src="../img/default_profile.png" name="aboutme" width="140" height="140" class="img-circle"></a>

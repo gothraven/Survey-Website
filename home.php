@@ -5,6 +5,7 @@ require("auth/EtreAuthentifie.php");
 $title = 'Accueil';
 include("header.php");
 ?>
+   <link rel="stylesheet" href="css/glow.min.css">
     <div class='container'>
         <center class="jumbotron">
             <a href="#aboutModal" class="glowg" id="profile"><img src="img/default_profile.png" name="aboutme" width="140" height="140" class="img-circle"></a>
